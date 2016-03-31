@@ -1,0 +1,36 @@
+<tw-storydata name="New Science" startnode="1" creator="Twine" creator-version="2.0.8" ifid="67CFB291-BC72-4902-8BE3-0DE4899A025B" format="Harlowe" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
+
+</script><tw-passagedata pid="1" name="Beginning" tags="" position="26,26">While she is researching something, Aya feels like she&#x27;s on the verge of finding something.
+
+[[Ask question]]
+
+(set: $separation to 0)</tw-passagedata><tw-passagedata pid="2" name="Ask question" tags="" position="165,22">(something simple, to make the player discover the fact that they will actually have to think)
+
+[[Good answer]]
+
+[[Bad answer]]</tw-passagedata><tw-passagedata pid="3" name="Good answer" tags="" position="219,158">Breakthrough! Aya discovers a thing. She thinks about it : all the implications of it, the possible uses, how &quot;HOLY SHIT I FOUND THAT WHAT DO I DO&quot;
+
+Her best friend calls her to ask for news, she has to choose whether she tells her or not.
+
+[[Think about it on her own]]
+
+[[Ask her best friend for help]]</tw-passagedata><tw-passagedata pid="4" name="Bad answer" tags="" position="330,22">Fail, ask the question again
+
+[[Ask question]]</tw-passagedata><tw-passagedata pid="5" name="Think about it on her own" tags="" position="155,341">She thinks it&#x27;s a bad idea to share it with anyone for now, so she doesn&#x27;t say anything and gives an excuse to not go out that evening. She goes home and shares her feelings with Oyo.
+
+[[Day two]]
+
+(set: $separation to $separation - 1)</tw-passagedata><tw-passagedata pid="6" name="Ask her best friend for help" tags="" position="468,157">She says she found something huge, and she doesn&#x27;t know what to do and oh my god everything is overwhelming right now. Best friend calms her down, invites her to eat somewhere, and they spend the evening talking about it.
+
+(set: $separation to $separation + 1)
+
+[[Day two]]</tw-passagedata><tw-passagedata pid="7" name="Day two" tags="" position="394,361">Something something I&#x27;m testing stuff right now.
+
+(if: ($separation &gt; 0))[(link: &quot;Do the thing with friend&quot;)[(goto: &quot;Do the thing with friend&quot;)]]
+(if: ($separation &lt;= 0))[(link: &quot;Do the thing alone&quot;)[(goto: &quot;Do the thing alone&quot;)]]
+
+It works like this?</tw-passagedata><tw-passagedata pid="8" name="Do the thing with friend" tags="" position="405,497">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="9" name="Do the thing alone" tags="" position="530,392"></tw-passagedata></tw-storydata>
