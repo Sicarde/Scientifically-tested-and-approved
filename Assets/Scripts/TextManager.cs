@@ -14,12 +14,17 @@ public class TextManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		text = gameObject.GetComponentInParent<Text>();
-		textToPrint = "ceci est un merveilleux test. en experant que ca marche sinon. ca serait plutot genant test. en experant que ca. ma ceci est un merveilleux test. en experant que ca marche sinon. ca serait plutot genant test. en experant que ca. marche sinon ca. serait plutot. genant test en experant. que ca marche. sinon ca serait. plutot genant test en. experant que ca marche. sinon ca serait plutot genant ceci. est un plop plop plop. test en experant que. ca marche sinon ca serait. plutot genant test en experant. que ca marche sinon ca. serait plutot genant test en experant que. ca marche sinon ca serait plutot genant. test en experant que ca. marche sinon ca serait plutot. genant ceci est un. merveilleux test en experant que ca. marche sinon ca serait plutot genant test en experant. que ca marche sinon ca serait plutot. genant test en experant que ca marche sinon ca serait plutot genant test en experant que ca marche sinon ca serait plutot genant FIN DU TEXTE.";
+		textToPrint = "ceci est un merveilleux test. en experant que ca marche sinon. ca serait plutot genant test. en experant que ca. ma ceci est un merveilleux test. en experant que ca marche sinon. ca serait plutot genant test. en experant que ca. marche sinon ca. serait plutot. genant test en experant. que ca marche. sinon ca serait. plutot genant test en. experant que ca marche. sinon ca serait plutot genant ceci. est un plop plop plop. test en experant que. ca marche sinon ca serait. plutot genant test en experant. que ca marche sinon ca, serait plutot genant test en experant que, ca marche sinon ca serait plutot genant, test en experant que ca, marche sinon ca serait plutot, genant ceci est un, merveilleux test en experant que ca, marche sinon ca serait plutot genant test en experant, que ca marche sinon ca serait plutot, genant test en experant que ca marche sinon ca serait plutot genant test en experant que ca marche sinon ca serait plutot genant FIN DU TEXTE.";
 	}
 
 	int SentenceLenght(string s) {
-		if (s.IndexOf(".") != -1)
-			return (s.IndexOf(".") + 1);
+		if (s.IndexOf(".") != -1) {
+			if (s.IndexOf(".") < charPerLine * nbLines) {
+				return (s.IndexOf(".") + 1);
+			}
+		}
+		if (s.IndexOf(",") != -1)
+			return (s.IndexOf(",") + 1);
 		return s.Length;
 	}
 	
@@ -67,6 +72,9 @@ public class TextManager : MonoBehaviour {
 				textToAddSlowly = SaveTextOverflow("");
 				if (textToAddSlowly.Length > 0) {
 					text.text = "";
+					if (textToAddSlowly[0] == ' ') {
+						textToAddSlowly = textToAddSlowly.Substring(1);
+					}
 				}
 			}
 			if (skipText) {
