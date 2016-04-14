@@ -17,7 +17,13 @@
 
 
 
+
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
+
+
 
 
 
@@ -36,7 +42,7 @@ At some point she notices that holy shit she&#x27;s about to get some results.
 
 (set: $sociability to 0)
 (set: $suspicion to 0)
-(set: $fail to 0)</tw-passagedata><tw-passagedata pid="2" name="10V" tags="" position="147,157">Breakthrough! Oyo starts moving. Soon, he&#x27;s back to life, but completely disoriented. Aya hurriedly grabs some water and food (there&#x27;s always some in her lab for when she sneaks him in) and gives him.
+(set: $fail to 0)</tw-passagedata><tw-passagedata pid="2" name="10V" tags="" position="185,203">Breakthrough! Oyo starts moving. Soon, he&#x27;s back to life, but completely disoriented. Aya hurriedly grabs some water and food (there&#x27;s always some in her lab for when she sneaks him in) and gives him.
 
 Aya thinks about it : all the implications of it, the possible uses, how &quot;HOLY SHIT I FOUND THAT WHAT DO I DO&quot;
 
@@ -44,20 +50,20 @@ Her best friend calls her to ask for news, she has to choose whether she tells h
 
 [[Think about it on her own]]
 
-[[Ask her best friend for help]]</tw-passagedata><tw-passagedata pid="3" name="Think about it on her own" tags="" position="135,300">(set: $sociability to $sociability - 1)
+[[Ask her best friend for help]]</tw-passagedata><tw-passagedata pid="3" name="Think about it on her own" tags="" position="173,346">(set: $sociability to $sociability - 1)
 
 She thinks it&#x27;s a bad idea to share it with anyone for now, so she doesn&#x27;t say anything and gives an excuse to not go out that evening. She goes home and sets up Oyo comfortably.
 
-[[Day two]]</tw-passagedata><tw-passagedata pid="4" name="Ask her best friend for help" tags="" position="307,159">(set: $sociability to $sociability + 1)
+[[Day two]]</tw-passagedata><tw-passagedata pid="4" name="Ask her best friend for help" tags="" position="345,205">(set: $sociability to $sociability + 1)
 
 She says she found something huge, and she doesn&#x27;t know what to do and oh my god everything is overwhelming right now. Best friend calms her down, invites her to eat somewhere, and they spend the evening talking about it.
 
-[[Day two]]</tw-passagedata><tw-passagedata pid="5" name="Day two" tags="" position="395,361">Aya has to make sure that what she did actually works and wasn&#x27;t just a coincidence. It means more tests on dead things, and in particular, she will have to test it on a human body at some point.
+[[Day two]]</tw-passagedata><tw-passagedata pid="5" name="Day two" tags="" position="521,427">Aya has to make sure that what she did actually works and wasn&#x27;t just a coincidence. It means more tests on dead things, and in particular, she will have to test it on a human body at some point.
 
 (if: ($sociability &gt; 0))[(link: &quot;Do the thing with friend&quot;)[(goto: &quot;Do the thing with friend&quot;)]]
 (if: ($sociability &lt;= 0))[(link: &quot;Do the thing alone&quot;)[(goto: &quot;Do the thing alone&quot;)]]
 
-</tw-passagedata><tw-passagedata pid="6" name="Do the thing with friend" tags="" position="398,490">(set: $sociability to $sociability + 1)
+</tw-passagedata><tw-passagedata pid="6" name="Do the thing with friend" tags="" position="519,558">(set: $sociability to $sociability + 1)
 (set: $suspicion to $suspicion + 1)
 
 She decides that she should ask her friend for help in order to do the testing so she can confirm she&#x27;s not crazy. She calls her, and she comes over.
@@ -66,11 +72,13 @@ Science happens.
 
 They do tests on rats, no problem, they do tests on chimpanzees, they have to fix the dosage but eventually it works.
 
-At some point boss shows up, sees a bunch of living animals, and scold the girls because that&#x27;s not what they&#x27;re supposed to be working on.
+At some point boss shows up. They have to explain what they&#x27;re doing.
 
-Science high-five before friend goes back to her own lab, and Aya works on her tasks of the day.
+[[Tell it&#x27;s for a personal project.]]
 
-[[Go to next step]]</tw-passagedata><tw-passagedata pid="7" name="Do the thing alone" tags="" position="528,361">(set: $sociability to $sociability - 1)
+[[Try to find an excuse.]]
+
+[[Let friend handle.]]</tw-passagedata><tw-passagedata pid="7" name="Do the thing alone" tags="" position="654,427">(set: $sociability to $sociability - 1)
 
 She decides that it would be better if she did the testing alone because it&#x27;s a pretty dark thing to do.
 
@@ -78,11 +86,11 @@ She tests on other small animals first to make sure that it works, which it does
 
 She then asks for one chimpanzee, and see that the dosage isn&#x27;t strong enough. At some point, boss shows up, but she&#x27;s so stressed about staying hidden that she manages to hide the body before he enters the room and she pretends to work on whatever it is she&#x27;s supposed to be working on.
 
-[[Go to next step]]</tw-passagedata><tw-passagedata pid="8" name="1V" tags="" position="621,0">(set: $fail to $fail + 1)
+[[Go to next step]]</tw-passagedata><tw-passagedata pid="8" name="1V" tags="" position="1052,9">(set: $fail to $fail + 1)
 
 She tries that, but nothing happens.
 
-[[Question]]</tw-passagedata><tw-passagedata pid="9" name="100V" tags="" position="622,126">(set: $fail to $fail + 1)
+[[Question]]</tw-passagedata><tw-passagedata pid="9" name="100V" tags="" position="1053,135">(set: $fail to $fail + 1)
 
 She gets a flashback from one fateful class back when she was in college where her lab partner fried a mouse, and she decides that she should definitely not do that.
 
@@ -94,21 +102,21 @@ She should make sure that it&#x27;s sufficient to be working, but not too much s
 
 [[10V]]
 
-[[100V]]</tw-passagedata><tw-passagedata pid="11" name="Go to next step" tags="" position="568,520">Now she has to find a human body, which is way harder to get than just ask another lab for a spare chimpanzee. She asks around, and learns that she has to wait for the body of a new donor to come to the lab.
+[[100V]]</tw-passagedata><tw-passagedata pid="11" name="Go to next step" tags="" position="900,646">Now she has to find a human body, which is way harder to get than just ask another lab for a spare chimpanzee. She asks around, and learns that she has to wait for the body of a new donor to come to the lab.
 
 [[Ask around]]
 
-[[Sneak in the dead storage]]</tw-passagedata><tw-passagedata pid="12" name="Sneak in the dead storage" tags="" position="561,657">(set: $sociability to $sociability - 1)
+[[Sneak in the dead storage]]</tw-passagedata><tw-passagedata pid="12" name="Sneak in the dead storage" tags="" position="894,787">(set: $sociability to $sociability - 1)
 
 She does that in the middle of the night.
 
-[[Test on human]]</tw-passagedata><tw-passagedata pid="13" name="Ask around" tags="" position="706,516">(if: ($sociability &gt; 0))[She asks around the lab, and she does that with enough skill so it works and she manages to meet a teacher who lets her have a body. She just has to do that in the evening, after classes.
+[[Test on human]]</tw-passagedata><tw-passagedata pid="13" name="Ask around" tags="" position="1044,641">(if: ($sociability &gt; 0))[She asks around the lab, and she does that with enough skill so it works and she manages to meet a teacher who lets her have a body. She just has to do that in the evening, after classes.
 (link: &quot;Test on human&quot;)[(goto: &quot;Test on human&quot;)]]
 (if: ($sociability &lt;= 0))[She asks around, but no one really know or want to let her have a body, so she has to do that by herself.
 (link: &quot;Sneak in the dead storage&quot;)[(goto: &quot;Sneak in the dead storage&quot;)]]
 
 (set: $sociability to $sociability + 1)
-(set: $suspicion to $suspicion + 1)</tw-passagedata><tw-passagedata pid="14" name="Test on human" tags="" position="709,654">She does her test on a human body, finally.
+(set: $suspicion to $suspicion + 1)</tw-passagedata><tw-passagedata pid="14" name="Test on human" tags="" position="1203,791">She does her test on a human body, finally.
 
 However, the question is : what dosage?
 
@@ -116,22 +124,44 @@ However, the question is : what dosage?
 
 [[Less than chimpanzee]]
 
-[[More than chimpanzee]]</tw-passagedata><tw-passagedata pid="15" name="Same as for chimpanzee" tags="" position="1037,529">(set: $fail to $fail + 1)
+[[More than chimpanzee]]</tw-passagedata><tw-passagedata pid="15" name="Same as for chimpanzee" tags="" position="1205,8">(set: $fail to $fail + 1)
 
 The body jerks a bit, but nothing happens.
 
-[[Test on human]]</tw-passagedata><tw-passagedata pid="16" name="Less than chimpanzee" tags="" position="1030,656">(set: $fail to $fail + 1)
+[[Test on human]]</tw-passagedata><tw-passagedata pid="16" name="Less than chimpanzee" tags="" position="1198,135">(set: $fail to $fail + 1)
 
 Nothing happens.
 
-[[Test on human]]</tw-passagedata><tw-passagedata pid="17" name="More than chimpanzee" tags="" position="704,803">Victory! The person comes back to life.
+[[Test on human]]</tw-passagedata><tw-passagedata pid="17" name="More than chimpanzee" tags="" position="1204,970">Victory! The person comes back to life.
 
 They look a bit sick and disoriented, but alive. They have no idea what happened from the moment of their death, and think that it was just an error of diagnostic and were miraculously saved.
 
 Now she has to do something with that person.
+(if: $fail &gt; 3)[(link: &quot;Something&#x27;s wrong&quot;)[(goto: &quot;Something&#x27;s wrong&quot;)]]
 
-(if: ($suspicion &gt; 0))[]
-(if: ($suspicion &lt;= 0))[]</tw-passagedata></tw-storydata>
+(if: $fail &lt;= 3)[
+(if: ($suspicion &gt; 0))[People start asking questions, and Aya&#x27;s boss asks for her.
+(link: &quot;Go to boss&#x27;s office&quot;)[(goto: &quot;Go to boss&#x27;s office&quot;)]]
+(if: ($suspicion &lt;= 0))[She manages to make the whole thing pass as one of those weird mistakes that happen once in a million cases, and for some reason it works. Then she goes back home to reflect on everything.
+(link: &quot;Go home&quot;)[(goto: &quot;Go home&quot;)]]
+]
+
+END OF PART 1
+sociability - (print: $sociability)
+suspicion - (print: $suspicion)
+fail - (print: $fail)</tw-passagedata><tw-passagedata pid="18" name="Something&#x27;s wrong" tags="" position="1402,874">Because you&#x27;re not that good at what you&#x27;re doing, the guy you reanimated just died.
+
+Game over.</tw-passagedata><tw-passagedata pid="19" name="Go to boss&#x27;s office" tags="" position="1400,1132">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="20" name="Go home" tags="" position="989,1130">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="21" name="Tell it&#x27;s for a personal project." tags="" position="450,816">Boss says you shouldn&#x27;t be working on personal things during work time and just leaves you there.
+
+[[Go to next step]]</tw-passagedata><tw-passagedata pid="22" name="Try to find an excuse." tags="" position="589,704">(set: $suspicion to $suspicion + 1)
+
+You try to find an excuse but you&#x27;re pretty incoherent. Boss is annoyed and just leaves after urging you to go back to your actual work.
+
+[[Go to next step]]</tw-passagedata><tw-passagedata pid="23" name="Let friend handle." tags="" position="669,579">(set: $suspicion to $suspicion - 1)
+
+You look expectantly at your friend, who explains that another scientist asked you to keep these animals for a while because of security concern, and launches into a whole monologue about putting security first. That seems to work, but you are still urged to go back to work.
+
+[[Go to next step]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">/**
  * @license almond 0.3.0 Copyright (c) 2011-2014, The Dojo Foundation All Rights Reserved.
