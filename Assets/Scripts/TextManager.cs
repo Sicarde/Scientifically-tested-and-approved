@@ -4,8 +4,8 @@ using UnityEngine.UI;
 
 public class TextManager : MonoBehaviour {
 	public bool over = false;
-	int charPerLine = 53;
-	int nbLines = 5;
+	int charPerLine = 30;
+	int nbLines = 7;
 	float waitBetweenCharPrint = 1.0f;
 	string textToPrint;
 	Text text;
@@ -23,16 +23,18 @@ public class TextManager : MonoBehaviour {
 	}
 
 	int SentenceLenght(string s) {
+		string size = s;
+		int count = size.Length - size.Replace("\n", "").Length / 2;
 		if (s.IndexOf(".") != -1) {
-			if (s.IndexOf(".") < charPerLine * nbLines) {
+			if (s.IndexOf(".") < charPerLine * nbLines + count * charPerLine) {
 				return (s.IndexOf(".") + 1);
 			}
 		}
-		if (s.IndexOf(",") != -1)
+		if (s.IndexOf(",") != -1 && s.IndexOf(",") < charPerLine * nbLines + count * charPerLine)
 			return (s.IndexOf(",") + 1);
 		return s.Length;
 	}
-	
+
 	string GetSentence(ref string s) {
 		string sentence = s.Substring(0, SentenceLenght(s));
 		s = s.Substring(sentence.Length);
@@ -60,6 +62,9 @@ public class TextManager : MonoBehaviour {
 	}
 
 	IEnumerator UpdateText() {
+		while (text.text.Length > 0 && text.text[0] == '\n') {
+			text.text = text.text.Substring(1, text.text.Length - 1);
+		}
 		while (textToAddSlowly.Length > 0) {
 			text.text += textToAddSlowly[0];
 			textToAddSlowly = textToAddSlowly.Substring(1, textToAddSlowly.Length - 1);
