@@ -22,7 +22,11 @@
 
 
 
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
+
 
 
 
@@ -46,7 +50,8 @@ At some point she notices that holy shit she&#x27;s about to get some results.
 
 (set: $sociability to 0)
 (set: $suspicion to 0)
-(set: $fail to 0)</tw-passagedata><tw-passagedata pid="2" name="10V" tags="" position="185,203">Breakthrough! Oyo starts moving. Soon, he&#x27;s back to life, but completely disoriented. Aya hurriedly grabs some water and food (there&#x27;s always some in her lab for when she sneaks him in) and gives him.
+(set: $fail to 0)
+(set: $metFriend to 0)</tw-passagedata><tw-passagedata pid="2" name="10V" tags="" position="185,203">Breakthrough! Oyo starts moving. Soon, he&#x27;s back to life, but completely disoriented. Aya hurriedly grabs some water and food (there&#x27;s always some in her lab for when she sneaks him in) and gives him.
 
 Aya thinks about it : all the implications of it, the possible uses, how &quot;HOLY SHIT I FOUND THAT WHAT DO I DO&quot;
 
@@ -54,7 +59,7 @@ Her best friend calls her to ask for news, she has to choose whether she tells h
 
 [[Think about it on her own]]
 
-[[Ask her best friend for help]]</tw-passagedata><tw-passagedata pid="3" name="Think about it on her own" tags="" position="173,346">(set: $sociability to $sociability - 1)
+[[Ask her best friend for help]]</tw-passagedata><tw-passagedata pid="3" name="Think about it on her own" tags="" position="174,347">(set: $sociability to $sociability - 1)
 
 She thinks it&#x27;s a bad idea to share it with anyone for now, so she doesn&#x27;t say anything and gives an excuse to not go out that evening. She goes home and sets up Oyo comfortably.
 
@@ -62,13 +67,14 @@ She thinks it&#x27;s a bad idea to share it with anyone for now, so she doesn&#x
 
 She says she found something huge, and she doesn&#x27;t know what to do and oh my god everything is overwhelming right now. Best friend calms her down, invites her to eat somewhere, and they spend the evening talking about it.
 
-[[Day two]]</tw-passagedata><tw-passagedata pid="5" name="Day two" tags="" position="521,427">Aya has to make sure that what she did actually works and wasn&#x27;t just a coincidence. It means more tests on dead things, and in particular, she will have to test it on a human body at some point.
+[[Day two]]</tw-passagedata><tw-passagedata pid="5" name="Day two" tags="" position="521,428">Aya has to make sure that what she did actually works and wasn&#x27;t just a coincidence. It means more tests on dead things, and in particular, she will have to test it on a human body at some point.
 
 (if: ($sociability &gt; 0))[(link: &quot;Do the thing with friend&quot;)[(goto: &quot;Do the thing with friend&quot;)]]
 (if: ($sociability &lt;= 0))[(link: &quot;Do the thing alone&quot;)[(goto: &quot;Do the thing alone&quot;)]]
 
 </tw-passagedata><tw-passagedata pid="6" name="Do the thing with friend" tags="" position="519,558">(set: $sociability to $sociability + 1)
 (set: $suspicion to $suspicion + 1)
+(set: $metFriend to 1)
 
 She decides that she should ask her friend for help in order to do the testing so she can confirm she&#x27;s not crazy. She calls her, and she comes over.
 
@@ -82,7 +88,7 @@ At some point boss shows up. They have to explain what they&#x27;re doing.
 
 [[Try to find an excuse.]]
 
-[[Let friend handle.]]</tw-passagedata><tw-passagedata pid="7" name="Do the thing alone" tags="" position="654,427">(set: $sociability to $sociability - 1)
+[[Let friend handle.]]</tw-passagedata><tw-passagedata pid="7" name="Do the thing alone" tags="" position="654,427">(set: $metFriend to -1)
 
 She decides that it would be better if she did the testing alone because it&#x27;s a pretty dark thing to do.
 
@@ -114,13 +120,15 @@ She should make sure that it&#x27;s sufficient to be working, but not too much s
 
 She does that in the middle of the night.
 
-[[Test on human]]</tw-passagedata><tw-passagedata pid="13" name="Ask around" tags="" position="1044,641">(if: ($sociability &gt; 0))[She asks around the lab, and she does that with enough skill so it works and she manages to meet a teacher who lets her have a body. She just has to do that in the evening, after classes.
+[[Test on human]]</tw-passagedata><tw-passagedata pid="13" name="Ask around" tags="" position="1043,640">(set: $sociability to $sociability + 1)
+(set: $suspicion to $suspicion + 1)
+
+(if: ($sociability &gt; 1))[She asks around the lab, and she does that with enough skill so it works and she manages to meet a teacher who lets her have a body. She just has to do that in the evening, after classes.
 (link: &quot;Test on human&quot;)[(goto: &quot;Test on human&quot;)]]
 (if: ($sociability &lt;= 0))[She asks around, but no one really know or want to let her have a body, so she has to do that by herself.
 (link: &quot;Sneak in the dead storage&quot;)[(goto: &quot;Sneak in the dead storage&quot;)]]
 
-(set: $sociability to $sociability + 1)
-(set: $suspicion to $suspicion + 1)</tw-passagedata><tw-passagedata pid="14" name="Test on human" tags="" position="1203,791">She does her test on a human body, finally.
+</tw-passagedata><tw-passagedata pid="14" name="Test on human" tags="" position="1203,791">She does her test on a human body, finally.
 
 However, the question is : what dosage?
 
@@ -136,9 +144,63 @@ The body jerks a bit, but nothing happens.
 
 Nothing happens.
 
-[[Test on human]]</tw-passagedata><tw-passagedata pid="17" name="More than chimpanzee" tags="" position="1204,970">Victory! The person comes back to life.
+[[Test on human]]</tw-passagedata><tw-passagedata pid="17" name="More than chimpanzee" tags="" position="1204,969">Victory! The person comes back to life.
 
-They look a bit sick and disoriented, but alive. They have no idea what happened from the moment of their death, and think that it was just an error of diagnostic and were miraculously saved.
+They look a bit sick and disoriented, but alive. They have no idea what happened from the moment of their death.
+
+Now she has to do something with that person. Especially since he&#x27;s starting to ask questions.
+(if: $fail &gt; 3)[(link: &quot;Something&#x27;s wrong&quot;)[(goto: &quot;Something&#x27;s wrong&quot;)]]
+
+(if: $fail &lt;= 3)[
+(link: &quot;Explain the situation&quot;)[(goto: &quot;Explain the situation&quot;)]
+(link: &quot;Lie&quot;)[(goto: &quot;Lie&quot;)]
+(link: &quot;Knock him out&quot;)[(goto: &quot;Knock him out&quot;)]
+]
+
+END OF PART 1
+sociability - (print: $sociability)
+suspicion - (print: $suspicion)
+fail - (print: $fail)</tw-passagedata><tw-passagedata pid="18" name="[End] Something&#x27;s wrong" tags="" position="1434,767">Because you&#x27;re not that good at what you&#x27;re doing, the guy you reanimated just died.
+
+Game over.</tw-passagedata><tw-passagedata pid="19" name="Go to boss&#x27;s office" tags="" position="2573,1295">Boss asks what the hell is Aya doing, and blah blah blah public image blah blah press conference blah blah.
+
+Aya has no choice but to tell the truth and explains the whole thing. Boss is like &quot;Holy. Shit.&quot;
+
+Aya is sent home for the day and instructed not to get out until further notice.
+
+[[Go home-&gt;Go home 2]]</tw-passagedata><tw-passagedata pid="20" name="Go home" tags="" position="2305,1230">Aya has no idea how everything worked, but it did.
+
+Now she has to think of what to do.
+
+</tw-passagedata><tw-passagedata pid="21" name="Tell it&#x27;s for a personal project." tags="" position="450,816">Boss says you shouldn&#x27;t be working on personal things during work time and just leaves you there.
+
+[[Go to next step]]</tw-passagedata><tw-passagedata pid="22" name="Try to find an excuse." tags="" position="589,704">(set: $suspicion to $suspicion + 1)
+
+You try to find an excuse but you&#x27;re pretty incoherent. Boss is annoyed and just leaves after urging you to go back to your actual work.
+
+[[Go to next step]]</tw-passagedata><tw-passagedata pid="23" name="Let friend handle." tags="" position="669,579">(set: $suspicion to $suspicion - 1)
+
+You look expectantly at your friend, who explains that another scientist asked you to keep these animals for a while because of security concern, and launches into a whole monologue about putting security first. That seems to work, but you are still urged to go back to work.
+
+[[Go to next step]]</tw-passagedata><tw-passagedata pid="24" name="Go home 2" tags="" position="2761,1266">Aya goes home and is like &quot;... crap.&quot;
+
+Next day, her boss calls her and tells her to come as soon as she can.
+
+When in his office, he explains her that he wants to supervise everything she&#x27;s doing and work with her to make her discovery useful.
+
+[[Accept]]
+
+[[Hell no]]</tw-passagedata><tw-passagedata pid="25" name="Accept" tags="" position="2780,1501">Aya is pretty sure she doesn&#x27;t have a choice, so she accepts. Besides, how bad can it be, it&#x27;s not like her thing could be used as a weapon anyway.
+
+Boss is happy, he says she&#x27;s going to have a whole team working with her to improve her solution, and that he will call the press right away, and she will probably have to do interviews yadda yadda.</tw-passagedata><tw-passagedata pid="26" name="Hell no" tags="" position="2926,1373">There&#x27;s no way she&#x27;s doing that. She tries explaining that anyway, she used the last part of the solution she made and she didn&#x27;t think it would work so she didn&#x27;t bother taking notes of it so now it&#x27;s gone forever.
+
+Boss is having none of this. He asks that she still keep working on it and try to find it back by remembering what she did. He can provide help and resources if needed.
+
+[[Go to new lab]]</tw-passagedata><tw-passagedata pid="27" name="Go to new lab" tags="" position="3058,1373">Boss accompanies her to her new lab and says that everything is already settled with her previous and new team.
+
+There, she meets some people she doesn&#x27;t know. They tell her that they will help her remember, and that they&#x27;re already working on the dude she revived to try and recreate the solution she made.</tw-passagedata><tw-passagedata pid="28" name="[Other]" tags="" position="2433,1181">Victory! The person comes back to life.
+
+They look a bit sick and disoriented, but alive. They have no idea what happened from the moment of their death.
 
 Now she has to do something with that person.
 (if: $fail &gt; 3)[(link: &quot;Something&#x27;s wrong&quot;)[(goto: &quot;Something&#x27;s wrong&quot;)]]
@@ -153,45 +215,55 @@ Now she has to do something with that person.
 END OF PART 1
 sociability - (print: $sociability)
 suspicion - (print: $suspicion)
-fail - (print: $fail)</tw-passagedata><tw-passagedata pid="18" name="Something&#x27;s wrong" tags="" position="1402,874">Because you&#x27;re not that good at what you&#x27;re doing, the guy you reanimated just died.
+fail - (print: $fail)</tw-passagedata><tw-passagedata pid="29" name="Explain the situation" tags="" position="1046,1144">Aya tries explaining the situation to the guy. He has trouble believing it.
 
-Game over.</tw-passagedata><tw-passagedata pid="19" name="Go to boss&#x27;s office" tags="" position="1400,1132">Boss asks what the hell is Aya doing, and blah blah blah public image blah blah press conference blah blah.
+(if: ($sociability &gt; 0))[But she&#x27;s convincing enough that he believes her.
+(link: &quot;More talking&quot;)[(goto: &quot;More talking&quot;)]]
+(if: ($sociability &lt;= 0))[
+(link: &quot;The man is freaking out&quot;)[(goto: &quot;The man is freaking out&quot;)]]
 
-Aya has no choice but to tell the truth and explains the whole thing. Boss is like &quot;Holy. Shit.&quot;
+(set: $sociability to $sociability + 1)</tw-passagedata><tw-passagedata pid="30" name="Lie" tags="" position="1279,1161">Aya decides to lie about the situation, telling the man that there was an error of diagnostic and that he just woke up from his coma thanks to some extreme science.
 
-Aya is sent home for the day and instructed not to get out until further notice.
+(set: $suspicion to $suspicion - 1)</tw-passagedata><tw-passagedata pid="31" name="Knock him out" tags="" position="1376,1024">Aya decides that it&#x27;s safer if he doesn&#x27;t get out of there and start speaking and asking questions. She takes a heavy thing and hits him on the back of the head.
 
-[[Go home-&gt;Go home 2]]</tw-passagedata><tw-passagedata pid="20" name="Go home" tags="" position="989,1130">Aya has no idea how everything worked, but it did.
+(set: $sociability to $sociability - 1)
 
-Now she has to think of what to do.
+What to do with the &quot;body?&quot;</tw-passagedata><tw-passagedata pid="32" name="More talking" tags="" position="890,1147">Now they have to decide what to do, possibly together. Guy proposes his help because he&#x27;s not too bad at solving problems.
 
-</tw-passagedata><tw-passagedata pid="21" name="Tell it&#x27;s for a personal project." tags="" position="450,816">Boss says you shouldn&#x27;t be working on personal things during work time and just leaves you there.
+What to do next?
 
-[[Go to next step]]</tw-passagedata><tw-passagedata pid="22" name="Try to find an excuse." tags="" position="589,704">(set: $suspicion to $suspicion + 1)
+[[Tell someone else about it.]]
 
-You try to find an excuse but you&#x27;re pretty incoherent. Boss is annoyed and just leaves after urging you to go back to your actual work.
+[[Keep it your secret forever.]]</tw-passagedata><tw-passagedata pid="33" name="Tell someone else about it." tags="" position="753,1049">They speak for a while, and decide to tell best friend about it.
 
-[[Go to next step]]</tw-passagedata><tw-passagedata pid="23" name="Let friend handle." tags="" position="669,579">(set: $suspicion to $suspicion - 1)
+(if: $metFriend &gt; 0)[Next day, Aya calls her, explaining how the experiment went and that it worked and she now was in presence of the first human to ever be brought back to life.]
+(if: $metFriend &lt; 0)[Aya calls her friend, and has to explain everything to her but in the end she gets to it. Friend has to come all the way to her house to see the death certificate with her own eyes to believe her, and finally does.]</tw-passagedata><tw-passagedata pid="34" name="Keep it your secret forever." tags="" position="639,1188">Aya suggests that they shouldn&#x27;t tell anyone about it and keep it to themselves. But what to do with it?
 
-You look expectantly at your friend, who explains that another scientist asked you to keep these animals for a while because of security concern, and launches into a whole monologue about putting security first. That seems to work, but you are still urged to go back to work.
+[[[End] Destroy the solution and all the notes.]]
 
-[[Go to next step]]</tw-passagedata><tw-passagedata pid="24" name="Go home 2" tags="" position="1561,1126">Aya goes home and is like &quot;... crap.&quot;
+[[Keep it for themselves, but use it for good reasons.]]</tw-passagedata><tw-passagedata pid="35" name="[End] Destroy the solution and all the notes." tags="" position="458,1172">They decide it&#x27;s a bad thing to have that much power for two people, so they should destroy the solution.
 
-Next day, her boss calls her and tells her to come as soon as she can.
+With a bit of paperwork and talking to people, Aya manages to make the disparition of a corpse go unnoticed. Guy gets a change of identity, and starts working for some shady thing or another.
 
-When in his office, he explains her that he wants to supervise everything she&#x27;s doing and work with her to make her discovery useful.
+The end</tw-passagedata><tw-passagedata pid="36" name="Keep it for themselves, but use it for good reasons." tags="" position="464,1297"></tw-passagedata><tw-passagedata pid="37" name="The man is freaking out" tags="" position="1018,1269">He&#x27;s like HOLY SHIT WTF HAPPENED TO ME PLEASE LET ME OUT.
+He&#x27;s getting violent and threatening Aya.
 
-[[Accept]]
+[[Try to speak to him]]
 
-[[Hell no]]</tw-passagedata><tw-passagedata pid="25" name="Accept" tags="" position="1558,1258">Aya is pretty sure she doesn&#x27;t have a choice, so she accepts. Besides, how bad can it be, it&#x27;s not like her thing could be used as a weapon anyway.
+[[Use the force]]</tw-passagedata><tw-passagedata pid="38" name="Try to speak to him" tags="" position="783,1342">(set: $sociability to $sociability + 1)
+(set: $suspicion to $suspicion - 1)
 
-Boss is happy, he says she&#x27;s going to have a whole team working with her to improve her solution, and that he will call the press right away, and she will probably have to do interviews yadda yadda.</tw-passagedata><tw-passagedata pid="26" name="Hell no" tags="" position="1704,1130">There&#x27;s no way she&#x27;s doing that. She tries explaining that anyway, she used the last part of the solution she made and she didn&#x27;t think it would work so she didn&#x27;t bother taking notes of it so now it&#x27;s gone forever.
+You get back a little and try to speak to him, tell him it&#x27;s going to be ok, yadda yadda.
+</tw-passagedata><tw-passagedata pid="39" name="Use the force" tags="" position="908,1423">(set: $sociability to $sociability - 1)
+(set: $suspicion to $suspicion + 1)
 
-Boss is having none of this. He asks that she still keep working on it and try to find it back by remembering what she did. He can provide help and resources if needed.
+She tries to knock him out. Considering he&#x27;s bigger and stronger than her, that doesn&#x27;t work much, so he pushes her down and run away. She tries to go after him but loses him quickly.
 
-[[Go to new lab]]</tw-passagedata><tw-passagedata pid="27" name="Go to new lab" tags="" position="1836,1130">Boss accompanies her to her new lab and says that everything is already settled with her previous and new team.
+[[There&#x27;s not much more to do, go home]]
 
-There, she meets some people she doesn&#x27;t know. They tell her that they will help her remember, and that they&#x27;re already working on the dude she revived to try and recreate the solution she made.</tw-passagedata></tw-storydata>
+[[Go tell boss about it]]</tw-passagedata><tw-passagedata pid="40" name="There&#x27;s not much more to do, go home" tags="" position="783,1470">(set: $suspicion to $suspicion - 1)
+
+She can&#x27;t catch up with him, and doesn&#x27;t know what to do, so going home is the best solution.</tw-passagedata><tw-passagedata pid="41" name="Go tell boss about it" tags="" position="887,1605">Aya decides it&#x27;s safer to go and tell her boss about it since there&#x27;s a crazy naked man running around in the facility, which is probably not a good thing.</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">/**
  * @license almond 0.3.0 Copyright (c) 2011-2014, The Dojo Foundation All Rights Reserved.
