@@ -1,0 +1,331 @@
+﻿:: StoryTitle
+New Science
+
+:: UserScript[script]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:: UserStylesheet[stylesheet]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:: Beginning
+Recently, Aya's pet Oyo died of an illness. She is still sad, but life goes on./A while later, she feels a bit better, but still shows up (drunk?) in her lab in the middle of the night./She decided to do experiments on Oyo because she feels like it's the right thing to do to make him still important to her, even after his death./There was an old project she was working on a long time ago, but which she completely abandoned. She gets its data back, and continues a bit, but on Oyo./At some point she notices that holy shit she's about to get some results. 
+
+[[Question]]
+<<set $sociability = 0>>
+<<set $suspicion = 0>>
+<<set $fail = 0>>
+<<set $metFriend = 0>>
+
+:: 10V
+Breakthrough! Oyo starts moving. Soon, he's back to life, but completely disoriented./Aya hurriedly grabs some water and food (there's always some in her lab for when she sneaks him in) and gives him./Aya thinks about it : all the implications of it, the possible uses, how "HOLY SHIT I FOUND THAT WHAT DO I DO"/Her best friend calls her to ask for news, she has to choose whether she tells her or not.
+
+[[Think about it on her own]]
+
+[[Ask her best friend for help]]
+
+:: Think about it on her own
+<<set $sociability = $sociability - 1>>
+
+She thinks it's a bad idea to share it with anyone for now, so she doesn't say anything and gives an excuse to not go out that evening./She goes home and sets up Oyo comfortably.
+
+[[Day two]]
+
+:: Ask her best friend for help
+<<set $sociability = $sociability + 1>>
+
+She says she found something huge, and she doesn't know what to do and oh my god everything is overwhelming right now./Best friend calms her down, invites her to eat somewhere, and they spend the evening talking about it.
+
+[[Day two]]
+
+:: Day two
+Aya has to make sure that what she did actually works and wasn't just a coincidence./It means more tests on dead things, and in particular, she will have to test it on a human body at some point.
+
+<<if $sociability > 0>>[["Do the thing with friend"|"Do the thing with friend"]]<<endif>>
+<<if $sociability <= 0>>[["Do the thing alone"|"Do the thing alone"]]<<endif>>
+
+
+
+:: Do the thing with friend
+<<set $sociability = $sociability + 1>>
+<<set $suspicion = $suspicion + 1>>
+<<set $metFriend = 1>>
+
+She decides that she should ask her friend for help in order to do the testing so she can confirm she's not crazy./She calls her, and she comes over./Science happens./They do tests on rats, no problem, they do tests on chimpanzees, they have to fix the dosage but eventually it works./At some point boss shows up. They have to explain what they're doing.
+
+[[Tell it's for a personal project.]]
+
+[[Try to find an excuse.]]
+
+[[Let friend handle.]]
+
+:: Do the thing alone
+<<set $metFriend = -1>>
+
+She decides that it would be better if she did the testing alone because it's a pretty dark thing to do./She tests on other small animals first to make sure that it works, which it does./She then asks for one chimpanzee, and see that the dosage isn't strong enough./At some point, boss shows up, but she's so stressed about staying hidden that she manages to hide the body before he enters the room and she pretends to work on whatever it is she's supposed to be working on.
+
+[[Go to next step]]
+
+:: 1V
+<<set $fail = $fail + 1>>
+
+She tries that, but nothing happens.
+
+[[Question]]
+
+:: 100V
+<<set $fail = $fail + 1>>
+
+She gets a flashback from one fateful class back when she was in college where her lab partner fried a mouse, and she decides that she should definitely not do that.
+
+[[Question]]
+
+:: Question
+Currently, he was injected with a solution she had worked on, now she has to apply current to him./She should make sure that it's sufficient to be working, but not too much so she doesn't fry him.
+
+[[1V]]
+
+[[10V]]
+
+[[100V]]
+
+:: Go to next step
+Now she has to find a human body, which is way harder to get than just ask another lab for a spare chimpanzee./She asks around, and learns that she has to wait for the body of a new donor to come to the lab.
+
+[[Ask around]]
+
+[[Sneak in the dead storage]]
+
+:: Sneak in the dead storage
+<<set $sociability = $sociability - 1>>
+
+She does that in the middle of the night.
+
+[[Test on human]]
+
+:: Ask around
+<<set $sociability = $sociability + 1>>
+<<set $suspicion = $suspicion + 1>>
+
+<<if $sociability > 1>>She asks around the lab, and she does that with enough skill so it works and she manages to meet a teacher who lets her have a body./She just has to do that in the evening, after classes.
+[["Test on human"|"Test on human"]]<<endif>>
+<<if $sociability <= 0>>She asks around, but no one really know or want to let her have a body, so she has to do that by herself.
+[["Sneak in the dead storage"|"Sneak in the dead storage"]]<<endif>>
+
+
+
+:: Test on human
+She does her test on a human body, finally./However, the question is : what dosage?
+
+[[Same as for chimpanzee]]
+
+[[Less than chimpanzee]]
+
+[[More than chimpanzee]]
+
+:: Same as for chimpanzee
+<<set $fail = $fail + 1>>
+
+The body jerks a bit, but nothing happens.
+
+[[Test on human]]
+
+:: Less than chimpanzee
+<<set $fail = $fail + 1>>
+
+Nothing happens.
+
+[[Test on human]]
+
+:: More than chimpanzee
+Victory! The person comes back to life./They look a bit sick and disoriented, but alive. They have no idea what happened from the moment of their death./Now she has to do something with that person. Especially since he's starting to ask questions.
+<<if $fail > 3>>[["Something's wrong"|"Something's wrong"]]<<endif>>
+
+<<if $fail <= 3>>
+[["Explain the situation"|"Explain the situation"]]
+[["Lie"|"Lie"]]
+[["Knock him out"|"Knock him out"]]
+<<endif>>
+
+END OF PART 1
+sociability - <<print $sociability>>
+suspicion - <<print $suspicion>>
+fail - <<print $fail>>
+
+:: [End] Something's wrong
+Because you're not that good at what you're doing, the guy you reanimated just died./Game over.
+
+:: Go to boss's office
+Boss asks what the hell is Aya doing, and blah blah blah public image blah blah press conference blah blah./Aya has no choice but to tell the truth and explains the whole thing. Boss is like "Holy. Shit."/Aya is sent home for the day and instructed not to get out until further notice.
+
+[[Go home->Go home 2]]
+
+:: Go home
+Aya has no idea how everything worked, but it did./Now she has to think of what to do.
+
+
+
+:: Tell it's for a personal project.
+Boss says you shouldn't be working on personal things during work time and just leaves you there.
+
+[[Go to next step]]
+
+:: Try to find an excuse.
+<<set $suspicion = $suspicion + 1>>
+
+You try to find an excuse but you're pretty incoherent. Boss is annoyed and just leaves after urging you to go back to your actual work.
+
+[[Go to next step]]
+
+:: Let friend handle.
+<<set $suspicion = $suspicion - 1>>
+
+You look expectantly at your friend, who explains that another scientist asked you to keep these animals for a while because of security concern, and launches into a whole monologue about putting security first. That seems to work, but you are still urged to go back to work.
+
+[[Go to next step]]
+
+:: Go home 2
+Aya goes home and is like "... crap."/Next day, her boss calls her and tells her to come as soon as she can./When in his office, he explains her that he wants to supervise everything she's doing and work with her to make her discovery useful.
+
+[[Accept]]
+
+[[Hell no]]
+
+:: Accept
+Aya is pretty sure she doesn't have a choice, so she accepts. Besides, how bad can it be, it's not like her thing could be used as a weapon anyway./Boss is happy, he says she's going to have a whole team working with her to improve her solution, and that he will call the press right away, and she will probably have to do interviews yadda yadda.
+
+:: Hell no
+There's no way she's doing that. She tries explaining that anyway, she used the last part of the solution she made and she didn't think it would work so she didn't bother taking notes of it so now it's gone forever./Boss is having none of this. He asks that she still keep working on it and try to find it back by remembering what she did. He can provide help and resources if needed.
+
+[[Go to new lab]]
+
+:: Go to new lab
+Boss accompanies her to her new lab and says that everything is already settled with her previous and new team./There, she meets some people she doesn't know. They tell her that they will help her remember, and that they're already working on the dude she revived to try and recreate the solution she made.
+
+:: [Other]
+Victory! The person comes back to life./They look a bit sick and disoriented, but alive. They have no idea what happened from the moment of their death./Now she has to do something with that person.
+<<if $fail > 3>>[["Something's wrong"|"Something's wrong"]]<<endif>>
+<<if $fail <= 3>>
+<<if $suspicion > 0>>People start asking questions, and Aya's boss asks for her.
+[["Go to boss's office"|"Go to boss's office"]]<<endif>>
+<<if $suspicion <= 0>>She manages to make the whole thing pass as one of those weird mistakes that happen once in a million cases, and for some reason it works./Then she goes back home to reflect on everything.
+[["Go home"|"Go home"]]<<endif>>
+<<endif>>
+
+END OF PART 1
+sociability - <<print $sociability>>
+suspicion - <<print $suspicion>>
+fail - <<print $fail>>
+
+:: Explain the situation
+Aya tries explaining the situation to the guy. He has trouble believing it.
+
+<<if $sociability > 0>>But she's convincing enough that he believes her.
+[["More talking"|"More talking"]]<<endif>>
+<<if $sociability <= 0>>
+[["The man is freaking out"|"The man is freaking out"]]<<endif>>
+
+<<set $sociability = $sociability + 1>>
+
+:: Lie
+Aya decides to lie about the situation, telling the man that there was an error of diagnostic and that he just woke up from his coma thanks to some extreme science.
+
+<<set $suspicion = $suspicion - 1>>
+
+:: Knock him out
+Aya decides that it's safer if he doesn't get out of there and start speaking and asking questions. She takes a heavy thing and hits him on the back of the head.
+
+<<set $sociability = $sociability - 1>>
+
+What to do with the "body?"
+
+:: More talking
+Now they have to decide what to do, possibly together. Guy proposes his help because he's not too bad at solving problems./What to do next?
+
+[[Tell someone else about it.]]
+
+[[Keep it your secret forever.]]
+
+:: Tell someone else about it.
+They speak for a while, and decide to tell best friend about it.
+
+<<if $metFriend > 0>>Next day, Aya calls her, explaining how the experiment went and that it worked and she now was in presence of the first human to ever be brought back to life.<<endif>>
+<<if $metFriend < 0>>Aya calls her friend, and has to explain everything to her but in the end she gets to it./Friend has to come all the way to her house to see the death certificate with her own eyes to believe her, and finally does.<<endif>>
+
+:: Keep it your secret forever.
+Aya suggests that they shouldn't tell anyone about it and keep it to themselves. But what to do with it?
+
+[[[End] Destroy the solution and all the notes.]]
+
+[[Keep it for themselves, but use it for good reasons.]]
+
+:: [End] Destroy the solution and all the notes.
+They decide it's a bad thing to have that much power for two people, so they should destroy the solution./With a bit of paperwork and talking to people, Aya manages to make the disparition of a corpse go unnoticed./Guy gets a change of identity, and starts working for some shady thing or another.
+
+The end
+
+:: Keep it for themselves, but use it for good reasons.
+
+
+:: The man is freaking out
+He's like HOLY SHIT WTF HAPPENED TO ME PLEASE LET ME OUT./He's getting violent and threatening Aya.
+
+[[Try to speak to him]]
+
+[[Use the force]]
+
+:: Try to speak to him
+<<set $sociability = $sociability + 1>>
+<<set $suspicion = $suspicion - 1>>
+
+You get back a little and try to speak to him, tell him it's going to be ok, yadda yadda.
+
+
+:: Use the force
+<<set $sociability = $sociability - 1>>
+<<set $suspicion = $suspicion + 1>>
+
+She tries to knock him out. Considering he's bigger and stronger than her, that doesn't work much, so he pushes her down and run away./She tries to go after him but loses him quickly.
+
+[[There's not much more to do, go home]]
+
+[[Go tell boss about it]]
+
+:: There's not much more to do, go home
+<<set $suspicion = $suspicion - 1>>
+
+She can't catch up with him, and doesn't know what to do, so going home is the best solution.
+
+:: Go tell boss about it
+Aya decides it's safer to go and tell her boss about it since there's a crazy naked man running around in the facility, which is probably not a good thing.

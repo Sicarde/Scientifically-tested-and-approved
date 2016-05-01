@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class TextManager : MonoBehaviour {
+	public bool over = false;
 	int charPerLine = 53;
 	int nbLines = 5;
 	float waitBetweenCharPrint = 1.0f;
@@ -10,11 +11,15 @@ public class TextManager : MonoBehaviour {
 	Text text;
 	string textToAddSlowly = "";
 	bool skipText = false;
+	bool start = true;
 
 	// Use this for initialization
 	void Start () {
 		text = gameObject.GetComponentInParent<Text>();
-		textToPrint = "ceci est un merveilleux test. en experant que ca marche sinon. ca serait plutot genant test. en experant que ca. ma ceci est un merveilleux test. en experant que ca marche sinon. ca serait plutot genant test. en experant que ca. marche sinon ca. serait plutot. genant test en experant. que ca marche. sinon ca serait. plutot genant test en. experant que ca marche. sinon ca serait plutot genant ceci. est un plop plop plop. test en experant que. ca marche sinon ca serait. plutot genant test en experant. que ca marche sinon ca, serait plutot genant test en experant que, ca marche sinon ca serait plutot genant, test en experant que ca, marche sinon ca serait plutot, genant ceci est un, merveilleux test en experant que ca, marche sinon ca serait plutot genant test en experant, que ca marche sinon ca serait plutot, genant test en experant que ca marche sinon ca serait plutot genant test en experant que ca marche sinon ca serait plutot genant FIN DU TEXTE.";
+		textToPrint = text.text.Replace('/', '\n');
+		if (textToPrint.Length == 0) {
+			gameObject.SetActive(false);
+		}
 	}
 
 	int SentenceLenght(string s) {
@@ -46,7 +51,6 @@ public class TextManager : MonoBehaviour {
 			textToPrint += newText;
 			return replacmentText;
 		} else {
-			Debug.Log("over");
 			while (newText.Length > 0 && (replacmentText.Length + SentenceLenght(newText)) < charPerLine * nbLines) {
 				replacmentText += GetSentence(ref newText);
 			}
@@ -65,10 +69,25 @@ public class TextManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.anyKeyDown) {
+		if (Input.anyKeyDown || start) {
+			if (start) {
+				start = false;
+			}
 			if (textToAddSlowly.Length > 0) {
 				skipText = true;
 			} else {
+				if (textToPrint.Length == 0 && textToAddSlowly.Length == 0 && !over) {
+					over = true;
+					LinkManager[] linksManagers = GameObject.FindObjectsOfType<LinkManager>();
+					int i = 0;
+					foreach (LinkManager lm in linksManagers) {
+						lm.EnableLink();
+						lm.transform.localPosition = new Vector3(lm.transform.localPosition.x,
+						                                             lm.transform.localPosition.y - 50 * i,
+						                                             lm.transform.localPosition.z);
+						i++;
+					}
+				}
 				textToAddSlowly = SaveTextOverflow("");
 				if (textToAddSlowly.Length > 0) {
 					text.text = "";

@@ -9,7 +9,7 @@ public class MainMenuScript : MonoBehaviour {
 
 	public void Play() {
 		Debug.Log("Play");
-		Application.LoadLevel("Story");
+		Application.LoadLevel("Test");
 	}
 	
 /*	public void Settings() {
