@@ -132,14 +132,22 @@ public class TwineTextPlayer : MonoBehaviour {
 				return;
 			}
 
-			Text uiText = (Text)Instantiate(TextTemplate);
-			uiText.gameObject.SetActive(true);
-			uiText.text = text.Text;
-			uiText.name =
-				text.Text.Length > maxNameLength-3 ? text.Text.Substring(0,27) + "..." :
-				text.Text.Trim().Length == 0 ? "(empty line)" :
-				text.Text;
-			child = uiText.rectTransform;
+/*			TextManager tManager = GameObject.FindObjectOfType<TextManager>();
+			if (tManager) {
+				tManager.GetComponent<Text>().text += text.Text;
+				Debug.Log(tManager.name);
+				Debug.Log(tManager.GetComponent<Text>().text);
+				Debug.Log(tManager.transform.position.ToString());
+			} else {*/
+				Text uiText = (Text)Instantiate(TextTemplate);
+				uiText.gameObject.SetActive(true);
+				uiText.text = text.Text;
+				uiText.name =
+					text.Text.Length > maxNameLength-3 ? text.Text.Substring(0,27) + "..." :
+					text.Text.Trim().Length == 0 ? "(empty line)" :
+					text.Text;
+				child = uiText.rectTransform;
+			//}
 		} else if (output is TwineLink) {
 			var link = (TwineLink)output;
 			if (!ShowNamedLinks && link.Name != link.Text) {

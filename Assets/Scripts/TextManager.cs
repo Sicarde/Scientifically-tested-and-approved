@@ -4,8 +4,8 @@ using UnityEngine.UI;
 
 public class TextManager : MonoBehaviour {
 	public bool over = false;
-	int charPerLine = 30;
-	int nbLines = 7;
+	int charPerLine = 47;
+	int nbLines = 4;
 	float waitBetweenCharPrint = 1.0f;
 	string textToPrint;
 	Text text;
@@ -22,21 +22,23 @@ public class TextManager : MonoBehaviour {
 		}
 	}
 
-	int SentenceLenght(string s) {
-		string size = s;
-		int count = size.Length - size.Replace("\n", "").Length / 2;
-		if (s.IndexOf(".") != -1) {
-			if (s.IndexOf(".") < charPerLine * nbLines + count * charPerLine) {
-				return (s.IndexOf(".") + 1);
-			}
+	int SentenceLenght(string s, int currentSize) {
+		string size = s.Substring(0, s.IndexOf(".") + 1);
+		int count = (size.Length - size.Replace("\n", "").Length) / 2;
+		if (s.IndexOf(".") != -1 && s.IndexOf(".") + currentSize + count * charPerLine < charPerLine * nbLines) {
+			return (s.IndexOf(".") + 1);
 		}
-		if (s.IndexOf(",") != -1 && s.IndexOf(",") < charPerLine * nbLines + count * charPerLine)
+		if (s.IndexOf(",") != -1 && s.IndexOf(",") + currentSize + count * charPerLine < charPerLine * nbLines) {
 			return (s.IndexOf(",") + 1);
+		}
+		if (s.IndexOf("\n") != -1 && s.IndexOf("\n") + currentSize + count * charPerLine < charPerLine * nbLines) {
+			return (s.IndexOf("\n") + 1);
+		}
 		return s.Length;
 	}
 
-	string GetSentence(ref string s) {
-		string sentence = s.Substring(0, SentenceLenght(s));
+	string GetSentence(ref string s, int lenght) {
+		string sentence = s.Substring(0, SentenceLenght(s, lenght));
 		s = s.Substring(sentence.Length);
 		return sentence;
 	}
@@ -44,17 +46,17 @@ public class TextManager : MonoBehaviour {
 	string SaveTextOverflow(string newText) {
 		string replacmentText = "";
 		if (textToPrint.Length > 0) {
-			while (textToPrint.Length > 0 && (replacmentText.Length + SentenceLenght(textToPrint)) < charPerLine * nbLines) {
-				replacmentText += GetSentence(ref textToPrint);
+			while (textToPrint.Length > 0 && (replacmentText.Length + SentenceLenght(textToPrint, replacmentText.Length)) < charPerLine * nbLines) {
+				replacmentText += GetSentence(ref textToPrint, replacmentText.Length);
 			}
-			while (newText.Length > 0 && (replacmentText.Length + SentenceLenght(newText)) < charPerLine * nbLines) {
-				replacmentText += GetSentence(ref newText);
+			while (newText.Length > 0 && (replacmentText.Length + SentenceLenght(newText, replacmentText.Length)) < charPerLine * nbLines) {
+				replacmentText += GetSentence(ref newText, replacmentText.Length);
 			}
 			textToPrint += newText;
 			return replacmentText;
 		} else {
-			while (newText.Length > 0 && (replacmentText.Length + SentenceLenght(newText)) < charPerLine * nbLines) {
-				replacmentText += GetSentence(ref newText);
+			while (newText.Length > 0 && (replacmentText.Length + SentenceLenght(newText, replacmentText.Length)) < charPerLine * nbLines) {
+				replacmentText += GetSentence(ref newText, replacmentText.Length);
 			}
 			textToPrint = newText;
 			return replacmentText;
@@ -88,7 +90,7 @@ public class TextManager : MonoBehaviour {
 					foreach (LinkManager lm in linksManagers) {
 						lm.EnableLink();
 						lm.transform.localPosition = new Vector3(lm.transform.localPosition.x,
-						                                             lm.transform.localPosition.y - 50 * i,
+						                                             lm.transform.localPosition.y - 45 * i,
 						                                             lm.transform.localPosition.z);
 						i++;
 					}
