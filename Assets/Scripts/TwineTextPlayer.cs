@@ -132,8 +132,8 @@ public class TwineTextPlayer : MonoBehaviour {
 				return;
 			}
 
-/*			TextManager tManager = GameObject.FindObjectOfType<TextManager>();
-			if (tManager) {
+			TextManager tManager = GameObject.FindObjectOfType<TextManager>();
+			/*if (tManager) {
 				tManager.GetComponent<Text>().text += text.Text;
 				Debug.Log(tManager.name);
 				Debug.Log(tManager.GetComponent<Text>().text);

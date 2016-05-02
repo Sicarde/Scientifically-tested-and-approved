@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class TextManager : MonoBehaviour {
 	public bool over = false;
+	bool dead = false;
 	int charPerLine = 47;
 	int nbLines = 4;
 	float waitBetweenCharPrint = 1.0f;
@@ -12,10 +13,29 @@ public class TextManager : MonoBehaviour {
 	string textToAddSlowly = "";
 	bool skipText = false;
 	bool start = true;
+	static int m_UniqueCounter = 0;
+	int m_MyID = m_UniqueCounter++;
 
-	// Use this for initialization
 	void Start () {
+		if (name == "" || name == "(empty line)") {
+			DestroyObject(gameObject);
+			return;
+		}
 		text = gameObject.GetComponentInParent<Text>();
+		TextManager[] tManager = GameObject.FindObjectsOfType<TextManager>();
+		if (tManager.Length > 1) {
+			foreach (TextManager tm in tManager) {
+				if (tm.m_MyID != m_MyID && !tm.dead) {
+					textToPrint = text.text.Replace('/', '\n') + tm.textToPrint;
+					name = name + " " + tm.name;
+					tm.dead = true;
+					DestroyObject(tm.gameObject);
+					return;
+				}
+			}
+		} else {
+			textToPrint = text.text.Replace('/', '\n');
+		}
 		textToPrint = text.text.Replace('/', '\n');
 		if (textToPrint.Length == 0) {
 			gameObject.SetActive(false);
@@ -74,6 +94,21 @@ public class TextManager : MonoBehaviour {
 		}
 	}
 
+	void CheckOver() {
+		if (!dead && textToPrint.Length == 0 && textToAddSlowly.Length == 0 && !over) {
+			over = true;
+			LinkManager[] linksManagers = GameObject.FindObjectsOfType<LinkManager>();
+			int i = 0;
+			foreach (LinkManager lm in linksManagers) {
+				lm.EnableLink();
+				lm.transform.localPosition = new Vector3(lm.transform.localPosition.x,
+				                                         lm.transform.localPosition.y - 45 * i,
+				                                         lm.transform.localPosition.z);
+				i++;
+			}
+		}
+	}
+
 	// Update is called once per frame
 	void Update () {
 		if (Input.anyKeyDown || start) {
@@ -83,18 +118,6 @@ public class TextManager : MonoBehaviour {
 			if (textToAddSlowly.Length > 0) {
 				skipText = true;
 			} else {
-				if (textToPrint.Length == 0 && textToAddSlowly.Length == 0 && !over) {
-					over = true;
-					LinkManager[] linksManagers = GameObject.FindObjectsOfType<LinkManager>();
-					int i = 0;
-					foreach (LinkManager lm in linksManagers) {
-						lm.EnableLink();
-						lm.transform.localPosition = new Vector3(lm.transform.localPosition.x,
-						                                             lm.transform.localPosition.y - 45 * i,
-						                                             lm.transform.localPosition.z);
-						i++;
-					}
-				}
 				textToAddSlowly = SaveTextOverflow("");
 				if (textToAddSlowly.Length > 0) {
 					text.text = "";
@@ -111,5 +134,6 @@ public class TextManager : MonoBehaviour {
 			}
 		}
 		StartCoroutine(UpdateText());
+		CheckOver();
 	}
 }
