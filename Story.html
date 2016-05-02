@@ -78,7 +78,7 @@ She says she found something huge, and she doesn&#x27;t know what to do and oh m
 [[Do the thing alone]]
 ]
 
-</tw-passagedata><tw-passagedata pid="6" name="Do the thing with friend" tags="" position="519,558">(set: $sociability to $sociability + 1)
+</tw-passagedata><tw-passagedata pid="6" name="Do the thing with friend" tags="" position="396,617">(set: $sociability to $sociability + 1)
 (set: $suspicion to $suspicion + 1)
 (set: $metFriend to 1)
 
@@ -94,7 +94,7 @@ At some point boss shows up. They have to explain what they&#x27;re doing.
 
 [[Try to find an excuse.]]
 
-[[Let friend handle.]]</tw-passagedata><tw-passagedata pid="7" name="Do the thing alone" tags="" position="655,429">(set: $metFriend to -1)
+[[Let friend handle.]]</tw-passagedata><tw-passagedata pid="7" name="Do the thing alone" tags="" position="810,277">(set: $metFriend to -1)
 
 She decides that it would be better if she did the testing alone because it&#x27;s a pretty dark thing to do.
 
@@ -102,11 +102,11 @@ She tests on other small animals first to make sure that it works, which it does
 
 She then asks for one chimpanzee, and see that the dosage isn&#x27;t strong enough. At some point, boss shows up, but she&#x27;s so stressed about staying hidden that she manages to hide the body before he enters the room and she pretends to work on whatever it is she&#x27;s supposed to be working on.
 
-[[Go to next step]]</tw-passagedata><tw-passagedata pid="8" name="1V" tags="" position="1052,9">(set: $fail to $fail + 1)
+[[Go to next step]]</tw-passagedata><tw-passagedata pid="8" name="1V" tags="" position="1002,14">(set: $fail to $fail + 1)
 
 She tries that, but nothing happens.
 
-[[Question]]</tw-passagedata><tw-passagedata pid="9" name="100V" tags="" position="1053,135">(set: $fail to $fail + 1)
+[[Question]]</tw-passagedata><tw-passagedata pid="9" name="100V" tags="" position="1003,130">(set: $fail to $fail + 1)
 
 She gets a flashback from one fateful class back when she was in college where her lab partner fried a mouse, and she decides that she should definitely not do that.
 
@@ -122,7 +122,7 @@ She should make sure that it&#x27;s sufficient to be working, but not too much s
 
 [[Ask around]]
 
-[[Sneak in the dead storage]]</tw-passagedata><tw-passagedata pid="12" name="Sneak in the dead storage" tags="" position="894,787">(set: $morals to $morals - 1)
+[[Sneak in the dead storage]]</tw-passagedata><tw-passagedata pid="12" name="Sneak in the dead storage" tags="" position="985,850">(set: $morals to $morals - 1)
 (set: $sociability to $sociability - 1)
 
 She does that in the middle of the night.
@@ -132,9 +132,9 @@ She does that in the middle of the night.
 (set: $morals to $morals + 1)
 
 (if: ($sociability &gt; 0))[She asks around the lab, and she does that with enough skill so it works and she manages to meet a teacher who lets her have a body. She just has to do that in the evening, after classes.
-(link: &quot;Test on human&quot;)[(goto: &quot;Test on human&quot;)]]
+[[Test on human]]]
 (if: ($sociability &lt;= 0))[She asks around, but no one really know or want to let her have a body, so she has to do that by herself.
-(link: &quot;Sneak in the dead storage&quot;)[(goto: &quot;Sneak in the dead storage&quot;)]]
+[[Sneak in the dead storage]]]
 
 </tw-passagedata><tw-passagedata pid="14" name="Test on human" tags="" position="1203,791">She does her test on a human body, finally.
 
@@ -144,11 +144,11 @@ However, the question is : what dosage?
 
 [[Less than chimpanzee]]
 
-[[More than chimpanzee]]</tw-passagedata><tw-passagedata pid="15" name="Same as for chimpanzee" tags="" position="1205,8">(set: $fail to $fail + 1)
+[[More than chimpanzee]]</tw-passagedata><tw-passagedata pid="15" name="Same as for chimpanzee" tags="" position="1287,139">(set: $fail to $fail + 1)
 
 The body jerks a bit, but nothing happens.
 
-[[Test on human]]</tw-passagedata><tw-passagedata pid="16" name="Less than chimpanzee" tags="" position="1198,135">(set: $fail to $fail + 1)
+[[Test on human]]</tw-passagedata><tw-passagedata pid="16" name="Less than chimpanzee" tags="" position="1143,131">(set: $fail to $fail + 1)
 
 Nothing happens.
 
@@ -158,7 +158,7 @@ They look a bit sick and disoriented, but alive. They have no idea what happened
 
 Now she has to do something with that person. Especially since he&#x27;s starting to ask questions.
 (if: $fail &gt; 3)[
-[[[End] Something&#x27;s wrong]]]
+[[(End)Something&#x27;s wrong]]]
 
 (if: $fail &lt;= 3)[
 [[Explain the situation]]
@@ -169,22 +169,22 @@ Now she has to do something with that person. Especially since he&#x27;s startin
 END OF PART 1
 sociability - (print: $sociability)
 suspicion - (print: $suspicion)
-fail - (print: $fail)</tw-passagedata><tw-passagedata pid="18" name="[End] Something&#x27;s wrong" tags="" position="1434,767">Because you&#x27;re not that good at what you&#x27;re doing, the guy you reanimated just died.
+fail - (print: $fail)</tw-passagedata><tw-passagedata pid="18" name="(End)Something&#x27;s wrong" tags="" position="1410,743">Because you&#x27;re not that good at what you&#x27;re doing, the guy you reanimated just died.
 
-Game over.</tw-passagedata><tw-passagedata pid="19" name="Tell it&#x27;s for a personal project." tags="" position="450,816">(set: $morals to $morals + 1)
+Game over.</tw-passagedata><tw-passagedata pid="19" name="Tell it&#x27;s for a personal project." tags="" position="616,797">(set: $morals to $morals + 1)
 
 Boss says you shouldn&#x27;t be working on personal things during work time and just leaves you there.
 
-[[Go to next step]]</tw-passagedata><tw-passagedata pid="20" name="Try to find an excuse." tags="" position="589,704">(set: $suspicion to $suspicion + 1)
+[[Go to next step]]</tw-passagedata><tw-passagedata pid="20" name="Try to find an excuse." tags="" position="677,635">(set: $suspicion to $suspicion + 1)
 (set: $morals to $morals - 1)
 
 You try to find an excuse but you&#x27;re pretty incoherent. Boss is annoyed and just leaves after urging you to go back to your actual work.
 
-[[Go to next step]]</tw-passagedata><tw-passagedata pid="21" name="Let friend handle." tags="" position="669,579">(set: $suspicion to $suspicion - 1)
+[[Go to next step]]</tw-passagedata><tw-passagedata pid="21" name="Let friend handle." tags="" position="703,499">(set: $suspicion to $suspicion - 1)
 
 You look expectantly at your friend, who explains that another scientist asked you to keep these animals for a while because of security concern, and launches into a whole monologue about putting security first. That seems to work, but you are still urged to go back to work.
 
-[[Go to next step]]</tw-passagedata><tw-passagedata pid="22" name="Explain the situation" tags="" position="1048,1144">Aya tries explaining the situation to the guy. He has trouble believing it.
+[[Go to next step]]</tw-passagedata><tw-passagedata pid="22" name="Explain the situation" tags="" position="846,1075">Aya tries explaining the situation to the guy. He has trouble believing it.
 
 (if: ($sociability &gt; 0))[But she&#x27;s convincing enough that he believes her.
 [[More talking]]]
@@ -192,72 +192,80 @@ You look expectantly at your friend, who explains that another scientist asked y
 [[The man is freaking out]]]
 
 (set: $sociability to $sociability + 1)
-(set: $morals to $morals + 1)</tw-passagedata><tw-passagedata pid="23" name="Lie" tags="" position="1279,1161">Aya decides to lie about the situation, telling the man that there was an error of diagnostic and that he just woke up from his coma thanks to some extreme science.
+(set: $morals to $morals + 1)</tw-passagedata><tw-passagedata pid="23" name="Lie" tags="" position="1292,1152">Aya is freaking out, she doesn&#x27;t know what to do with the guy because he&#x27;s asking a lot of questions. She thinks he can&#x27;t handle the truth, so she has to invent a lie.
 
-(set: $suspicion to $suspicion - 1)</tw-passagedata><tw-passagedata pid="24" name="Knock him out" tags="" position="1376,1024">Aya decides that it&#x27;s safer if he doesn&#x27;t get out of there and start speaking and asking questions. She takes a heavy thing and hits him on the back of the head.
+(set: $suspicion to $suspicion - 1)
+(set: $morals to $morals - 1)
+
+(if: ($sociability &lt;= 0))[However, the guy starts to get really impatient really fast, he seems to be remembering that he actually died.
+[[The man is freaking out]]]
+(if: ($sociability &gt; 0))[
+[[It was an error of diagnostic]]
+[[I don&#x27;t know, I just woke up too]]
+[[You just had an exhausting operation, you need rest]]]</tw-passagedata><tw-passagedata pid="24" name="Knock him out" tags="" position="1502,906">Aya decides that it&#x27;s safer if he doesn&#x27;t get out of there and start speaking and asking questions. She takes a heavy thing and hits him on the back of the head.
 
 (set: $sociability to $sociability - 1)
 
-What to do with the &quot;body?&quot;</tw-passagedata><tw-passagedata pid="25" name="More talking" tags="" position="890,1147">Now they have to decide what to do, possibly together. Guy proposes his help because he&#x27;s not too bad at solving problems.
+What to do with the &quot;body?&quot;</tw-passagedata><tw-passagedata pid="25" name="More talking" tags="" position="489,1068">Now they have to decide what to do, possibly together. Guy proposes his help because he&#x27;s not too bad at solving problems.
 
 What to do next?
 
 [[Tell someone else about it.]]
 
-[[Keep it your secret forever.]]</tw-passagedata><tw-passagedata pid="26" name="Tell someone else about it." tags="" position="653,1161">They speak for a while, and decide to tell best friend about it.
+[[Keep it your secret forever.]]</tw-passagedata><tw-passagedata pid="26" name="Tell someone else about it." tags="" position="250,1127">They speak for a while, and decide to tell best friend about it.
 
 (if: $metFriend &gt; 0)[Next day, Aya calls her, explaining how the experiment went and that it worked and she now was in presence of the first human to ever be brought back to life.]
 (if: $metFriend &lt; 0)[Aya calls her friend, and has to explain everything to her but in the end she gets to it. Friend has to come all the way to her house to see the death certificate with her own eyes to believe her, and finally does.]
 
 They think about what to do, and pool their ideas.
 
-[[[End]Give everything to a charity and stop dealing about it]]
+[[(End)Give everything to a charity and stop dealing about it]]
 
-[[[End]keep experimenting]]
+[[(End)keep experimenting]]
 
-[[[Sell it to another company]]]</tw-passagedata><tw-passagedata pid="27" name="Keep it your secret forever." tags="" position="148,779">Aya suggests that they shouldn&#x27;t tell anyone about it and keep it to themselves. But what to do with it?
+[[(End)Sell it to someone else]]</tw-passagedata><tw-passagedata pid="27" name="Keep it your secret forever." tags="" position="148,779">Aya suggests that they shouldn&#x27;t tell anyone about it and keep it to themselves. But what to do with it?
 
-[[[End] Destroy the solution and all the notes.]]
+[[(End)Destroy the solution and all the notes.]]
 
-[[[End]Keep it for themselves, but use it for good reasons.]]</tw-passagedata><tw-passagedata pid="28" name="[End] Destroy the solution and all the notes." tags="" position="9,725">They decide it&#x27;s a bad thing to have that much power for two people, so they should destroy the solution.
+[[(End)Keep it for themselves, but use it for good reasons.]]</tw-passagedata><tw-passagedata pid="28" name="(End)Destroy the solution and all the notes." tags="" position="9,724">They decide it&#x27;s a bad thing to have that much power for two people, so they should destroy the solution.
 
 With a bit of paperwork and talking to people, Aya manages to make the disparition of a corpse go unnoticed. Guy gets a change of identity, and starts working for some shady thing or another.
 
-The end</tw-passagedata><tw-passagedata pid="29" name="[End]Keep it for themselves, but use it for good reasons." tags="" position="23,854"></tw-passagedata><tw-passagedata pid="30" name="The man is freaking out" tags="" position="1017,1269">He&#x27;s like HOLY SHIT WTF HAPPENED TO ME PLEASE LET ME OUT.
+The end</tw-passagedata><tw-passagedata pid="29" name="(End)Keep it for themselves, but use it for good reasons." tags="" position="23,854"></tw-passagedata><tw-passagedata pid="30" name="The man is freaking out" tags="" position="770,1246">He&#x27;s like HOLY SHIT WTF HAPPENED TO ME PLEASE LET ME OUT.
 He&#x27;s getting violent and threatening Aya.
 
 [[Try to speak to him]]
 
-[[Use the force]]</tw-passagedata><tw-passagedata pid="31" name="Try to speak to him" tags="" position="749,1299">(set: $sociability to $sociability + 1)
+[[Use the force]]</tw-passagedata><tw-passagedata pid="31" name="Try to speak to him" tags="" position="539,1239">(set: $sociability to $sociability + 1)
 (set: $suspicion to $suspicion - 1)
 
 You get back a little and try to speak to him, tell him it&#x27;s going to be ok, yadda yadda.
 
-[[More talking]]</tw-passagedata><tw-passagedata pid="32" name="Use the force" tags="" position="908,1423">(set: $morals to $morals - 1)
+[[More talking]]</tw-passagedata><tw-passagedata pid="32" name="Use the force" tags="" position="767,1432">(set: $morals to $morals - 1)
 (set: $sociability to $sociability - 1)
 (set: $suspicion to $suspicion + 1)
 
 She tries to knock him out. Considering he&#x27;s bigger and stronger than her, that doesn&#x27;t work much, so he pushes her down and run away. She tries to go after him but loses him quickly.
 
-[[Go tell boss about it]]</tw-passagedata><tw-passagedata pid="33" name="Go tell boss about it" tags="" position="887,1605">(set: $morals to $morals + 1)
+[[Go tell boss about it]]</tw-passagedata><tw-passagedata pid="33" name="Go tell boss about it" tags="" position="768,1600">(set: $morals to $morals + 1)
 
 Aya decides it&#x27;s safer to go and tell her boss about it since there&#x27;s a crazy naked man running around in the facility, which is probably not a good thing.
 
 She has to explain the whole reviving thing, boss is amazed, and tells her to go home and not get out until he calls her.
 
-[[Next day]]</tw-passagedata><tw-passagedata pid="34" name="Next day" tags="" position="887,1755">Boss calls her and tell her to come as soon as she can.
+[[Next day]]</tw-passagedata><tw-passagedata pid="34" name="Next day" tags="" position="712,1757">Boss calls her and tell her to come as soon as she can.
 
 WHen she&#x27;s there, he tells her that the man was caught and locked inside the lab with guards, but that&#x27;s not her problem anymore. He asks about what she did, and if it&#x27;s reproducible.
 
 [[No]]
 
-[[Yes]]</tw-passagedata><tw-passagedata pid="35" name="No" tags="" position="726,1754">(set: $morals to $morals + 1)
+[[Yes]]</tw-passagedata><tw-passagedata pid="35" name="No" tags="" position="529,1715">(set: $morals to $morals + 1)
 
 Aya doesn&#x27;t want boss to put his hands on this so she refuses to do it.
 
 Threatening happens.
 
-[[Yes]]</tw-passagedata><tw-passagedata pid="36" name="Yes" tags="" position="874,1910">(set: $morals to $morals - 1)
+[[Yes]]</tw-passagedata><tw-passagedata pid="36" name="Yes" tags="" position="572,1884">(set: $morals to $morals - 1)
 
 He then asks her to stay close and not tell anything to anyone.
 
@@ -265,7 +273,7 @@ Later in the night, he calls her and tell her that there is someone he wants her
 
 [[Do it]]
 
-[[Pretend it didn&#x27;t work]]</tw-passagedata><tw-passagedata pid="37" name="Do it" tags="" position="744,2047">She prepares more of the solution and inject it to the body. And tadam, it works!
+[[Pretend it didn&#x27;t work]]</tw-passagedata><tw-passagedata pid="37" name="Do it" tags="" position="515,2046">She prepares more of the solution and inject it to the body. And tadam, it works!
 
 Boss is happy because it was his wife, cue a very sentimental scene.
 
@@ -273,56 +281,56 @@ Boss tells Aya she&#x27;ll get a so many % raise if she continues doing that, sh
 
 [[Accept]]
 
-[[Refuse]]</tw-passagedata><tw-passagedata pid="38" name="Pretend it didn&#x27;t work" tags="" position="982,2082">Boss is not happy. He sends her home and tells her not to tell anyone about it or else she will get problems.
+[[Refuse]]</tw-passagedata><tw-passagedata pid="38" name="Pretend it didn&#x27;t work" tags="" position="753,2035">Boss is not happy. He sends her home and tells her not to tell anyone about it or else she will get problems.
 
-[[Next day again]]</tw-passagedata><tw-passagedata pid="39" name="Refuse" tags="" position="808,2189">Mild threatening happens. He tells Aya that she if she still chooses to refuse, there&#x27;s going to be consequences.
+[[Next day again]]</tw-passagedata><tw-passagedata pid="39" name="Refuse" tags="" position="524,2203">Mild threatening happens. He tells Aya that she if she still chooses to refuse, there&#x27;s going to be consequences.
 
 [[Accept]]
 
-[[Still refuse]]</tw-passagedata><tw-passagedata pid="40" name="Accept" tags="" position="579,2178">She accepts.
+[[Still refuse]]</tw-passagedata><tw-passagedata pid="40" name="Accept" tags="" position="287,2155">She accepts.
 
 In the next few days, everything is set up so she has a whole team for herself.
 
 (if: $morals &gt; 0)[
-[[[End]Do good]]]
+[[(End)Do good]]]
 (if: $morals &lt;= 0)[
-[[[End]Do bad]]]</tw-passagedata><tw-passagedata pid="41" name="[End]Do good" tags="" position="422,2113">With all that power, Aya tries to do her best to help people. </tw-passagedata><tw-passagedata pid="42" name="[End]Do bad" tags="" position="412,2258">The call of money and power is strong, and Aya became rich selling her solution to multiple companies. It threw the world into chaos, because humanity wasn&#x27;t ready for that. Being revived became a rich person thing, and the richest ones basically became immortal.
+[[(End)Do bad]]]</tw-passagedata><tw-passagedata pid="41" name="(End)Do good" tags="" position="95,2066">With all that power, Aya tries to do her best to help people. </tw-passagedata><tw-passagedata pid="42" name="(End)Do bad" tags="" position="74,2235">The call of money and power is strong, and Aya became rich selling her solution to multiple companies. It threw the world into chaos, because humanity wasn&#x27;t ready for that. Being revived became a rich person thing, and the richest ones basically became immortal.
 
-Congrats, you fucked up everything!</tw-passagedata><tw-passagedata pid="43" name="Ask friend about that" tags="" position="1262,2107">Aya goes to the new lab of her friend and ask her what the fuck is this all about.
+Congrats, you fucked up everything!</tw-passagedata><tw-passagedata pid="43" name="Ask friend about that" tags="" position="1098,2103">Aya goes to the new lab of her friend and ask her what the fuck is this all about.
 
 Friend explains that boss came to her because Aya refused to work for him, and she accepted because she was given lots of money.
 
 She adds that Aya isn&#x27;t even needed anymore anyway, and that she&#x27;s basically fired and she should get all her stuff from her lab.
 
-[[Go get stuff]]</tw-passagedata><tw-passagedata pid="44" name="Shit." tags="" position="1135,2239">Friend is tied on a chair in the middle of the room.
+[[Go get stuff]]</tw-passagedata><tw-passagedata pid="44" name="Shit." tags="" position="873,2224">Friend is tied on a chair in the middle of the room.
 
 Boss tells Aya that she has a choice. Either watch her friend get tortured, or cooperate. Now he doesn&#x27;t want to work with her because he doesn&#x27;t trust her, so he asks her to just give him the instructions.
 
 [[Give the instructions]]
 
-[[Refuse to say anything]]</tw-passagedata><tw-passagedata pid="45" name="Next day again" tags="" position="1132,2103">Aya gets home, but pass by the lab and grab any clue of what she was doing in order to hide it.
+[[Refuse to say anything]]</tw-passagedata><tw-passagedata pid="45" name="Next day again" tags="" position="891,2078">Aya gets home, but pass by the lab and grab any clue of what she was doing in order to hide it.
 
 (if: $metFriend &gt; 0)[Next day, you learn that the person who Aya was supposed to revive is alive. Turns out boss asked her best friend for help, and she accepted. She feels like shit.
 [[Ask friend about that]]]
 
 (if: $metFriend &lt; 0)[Next day, boss calls Aya and tell her to join him in a weird place. She accepts, not knowing what he wants. When she gets there, she is locked inside with him and a bunch of scary people.
-[[Shit.]]]</tw-passagedata><tw-passagedata pid="46" name="Give the instructions" tags="" position="1145,2453">Boss smiles, but does nothing to free friend. he tells Aya that he will keep her and he will let her go when he&#x27;s sure that Aya isn&#x27;t a danger to him anymore.
+[[Shit.]]]</tw-passagedata><tw-passagedata pid="46" name="Give the instructions" tags="" position="844,2517">Boss smiles, but does nothing to free friend. he tells Aya that he will keep her and he will let her go when he&#x27;s sure that Aya isn&#x27;t a danger to him anymore.
 
-[[[End]Go home, defeated]]</tw-passagedata><tw-passagedata pid="47" name="Refuse to say anything" tags="" position="1399,2294">Aya refuses to give the solution because she doesn&#x27;t trust boss. He&#x27;s pissed, and waves to one of his men to start hitting friend.
-
-[[Give the instructions]]
-
-[[Still don&#x27;t give in]]</tw-passagedata><tw-passagedata pid="48" name="Still don&#x27;t give in" tags="" position="1402,2444">Friend is in bad shape. She starts begging her to just tell him.
+[[(End)Go home, defeated]]</tw-passagedata><tw-passagedata pid="47" name="Refuse to say anything" tags="" position="1028,2341">Aya refuses to give the solution because she doesn&#x27;t trust boss. He&#x27;s pissed, and waves to one of his men to start hitting friend.
 
 [[Give the instructions]]
 
-[[[End]Don&#x27;t do anything]]</tw-passagedata><tw-passagedata pid="49" name="[End]Don&#x27;t do anything" tags="" position="1408,2597">Aya explains that this is too dangerous and she can&#x27;t do that no matter what. Friend stopped moving, and boss tells his men to stop.
+[[Still don&#x27;t give in]]</tw-passagedata><tw-passagedata pid="48" name="Still don&#x27;t give in" tags="" position="1048,2489">Friend is in bad shape. She starts begging her to just tell him.
+
+[[Give the instructions]]
+
+[[Don&#x27;t do anything]]</tw-passagedata><tw-passagedata pid="49" name="Don&#x27;t do anything" tags="" position="1005,2648">Aya explains that this is too dangerous and she can&#x27;t do that no matter what. Friend stopped moving, and boss tells his men to stop.
 
 DEUS EX MACHINA!!!!! The guy who was revived crashes in, beats up everyone including boss, unties friend, grabs Aya by the hand and runs out.
 
 Aya is like WTF.
 
-[[Go hide somewhere]]</tw-passagedata><tw-passagedata pid="50" name="Go hide somewhere" tags="" position="1405,2755">Aya asks the guy what the fuck he thinks he&#x27;s doing.
+[[Go hide somewhere]]</tw-passagedata><tw-passagedata pid="50" name="Go hide somewhere" tags="" position="1001.0001,2791">Aya asks the guy what the fuck he thinks he&#x27;s doing.
 
 He explains that the guards weren&#x27;t strong enough to keep him in because he got some weird powers that made him stronger.
 
@@ -330,65 +338,113 @@ They quickly go back to the actual problem : friend is still unconscious, and in
 
 At some point they see that nothing more can be done for her.
 
-[[[End]Or does it?]]</tw-passagedata><tw-passagedata pid="51" name="[End]Go home, defeated" tags="" position="1127,2682">Aya goes home. A few days later, she learns that friend is let out too. Meanwhile, Aya had given boss all her stuff about the experiments.
+[[(End)Or does it?]]</tw-passagedata><tw-passagedata pid="51" name="(End)Go home, defeated" tags="" position="832,2664">Aya goes home. A few days later, she learns that friend is let out too. Meanwhile, Aya had given boss all her stuff about the experiments.
 
-Basically same end than do bad but Aya is just miserable.</tw-passagedata><tw-passagedata pid="52" name="[End]Or does it?" tags="" position="1252,2706">They remember why they are here in the first place : the solution. Guy goes quickly at Aya&#x27;s place to grab everything they need while Aya sneaks in the lab to get all the stuff they need, then they revive friend.
+Basically same end than do bad but Aya is just miserable.</tw-passagedata><tw-passagedata pid="52" name="(End)Or does it?" tags="" position="853,2812">They remember why they are here in the first place : the solution. Guy goes quickly at Aya&#x27;s place to grab everything they need while Aya sneaks in the lab to get all the stuff they need, then they revive friend.
 
 Boss managed to frame them for some crime or another, so they have to stay on the run. Thankfully, they get in contact with the right kind of person, which give them access to chemicals and stuff to keep doing what they do. They end up being the founders of an underground group of super powerful people who do neither good nor bad, but live together, and protect each other.
 
-Finish that one on Aya being killed in order to be brought back again.</tw-passagedata><tw-passagedata pid="53" name="Still refuse" tags="" position="808,2339">Boss is not happy. However, his wife tells him that he should just let it go and don&#x27;t care about it. The confusion gives Aya the time necessary to run away.
+Finish that one on Aya being killed in order to be brought back again.</tw-passagedata><tw-passagedata pid="53" name="Still refuse" tags="" position="552,2352">Boss is not happy. However, his wife tells him that he should just let it go and don&#x27;t care about it. The confusion gives Aya the time necessary to run away.
 
-[[Run away]]</tw-passagedata><tw-passagedata pid="54" name="Run away" tags="" position="808,2489">She has no idea what&#x27;s going to happen to her, but she just runs to her home. She passes by the lab to make sure she doesn&#x27;t leave any clue behind, and hides everything in her home.
+[[Run away]]</tw-passagedata><tw-passagedata pid="54" name="Run away" tags="" position="541,2505">She has no idea what&#x27;s going to happen to her, but she just runs to her home. She passes by the lab to make sure she doesn&#x27;t leave any clue behind, and hides everything in her home.
 
 Next day, she wonders what&#x27;s going to happen to her. She turns on the tv and sees that she&#x27;s wanted by the authorities because boss said she stole important secrets. She leaves as soon as she can, taking the most important part of her research, destroying the rest, and also taking a few necessary things.
 
 She has no idea where to go though.
 
-[[[End]Go hide in a random place]]
+[[(End)Go hide in a random place]]
 
-[[Risk going back to the lab to get the guy]]</tw-passagedata><tw-passagedata pid="55" name="[End]Go hide in a random place" tags="" position="615,2498">Apparently she does a pretty good job at hiding, because no one finds her, not even friend. At some point she ends up burning the rest of her research because she thinks no single human should have such power.</tw-passagedata><tw-passagedata pid="56" name="Risk going back to the lab to get the guy" tags="" position="798,2648">She tries to go back to the lab to let guy free. She sees friend at some point, and ask her for help in that. They free him, and they run away together.
+[[Risk going back to the lab to get the guy]]</tw-passagedata><tw-passagedata pid="55" name="(End)Go hide in a random place" tags="" position="199,2486">Apparently she does a pretty good job at hiding, because no one finds her, not even friend. At some point she ends up burning the rest of her research because she thinks no single human should have such power.</tw-passagedata><tw-passagedata pid="56" name="Risk going back to the lab to get the guy" tags="" position="532,2672">She tries to go back to the lab to let guy free. She sees friend at some point, and ask her for help in that. They free him, and they run away together.
 
 (if: $metFriend &lt; 0)[They explain everything to friend, who thinks it&#x27;s crazy.]
 
-[[[End] Together, take over the world]]</tw-passagedata><tw-passagedata pid="57" name="[End] Together, take over the world" tags="" position="798,2798">At some point during the chase, Aya is killed. Her body is carried by friend and guy, and they hide well enough to end up finding a way to revive her.
+[[(End)Together, take over the world]]</tw-passagedata><tw-passagedata pid="57" name="(End)Together, take over the world" tags="" position="256,2677">At some point during the chase, Aya is killed. Her body is carried by friend and guy, and they hide well enough to end up finding a way to revive her.
 
-They live together for a while. At some point, they find out that people who were revived become a lot stronger, and almost immortal. They decide to kill friend and revive her too, and to lead a revolution.</tw-passagedata><tw-passagedata pid="58" name="Go get stuff" tags="" position="1411,2105">Aya goes to her lab, to grab everything. When she&#x27;s about to leave, guy suddenly catches up with her and tell her that he managed to escape and she needs to help him.
+They live together for a while. At some point, they find out that people who were revived become a lot stronger, and almost immortal. They decide to kill friend and revive her too, and to lead a revolution.</tw-passagedata><tw-passagedata pid="58" name="Go get stuff" tags="" position="1227,2243">Aya goes to her lab, to grab everything. When she&#x27;s about to leave, guy suddenly catches up with her and tell her that he managed to escape and she needs to help him.
 
 [[I can&#x27;t do anything]]
 
-[[Sure, come with me]]</tw-passagedata><tw-passagedata pid="59" name="I can&#x27;t do anything" tags="" position="1546,2130">Aya says there&#x27;s nothing she can do and ask him to leave her alone, before going home.
+[[Sure, come with me]]</tw-passagedata><tw-passagedata pid="59" name="I can&#x27;t do anything" tags="" position="1232,2373">Aya says there&#x27;s nothing she can do and ask him to leave her alone, before going home.
 
-[[[End]A while later]]</tw-passagedata><tw-passagedata pid="60" name="Sure, come with me" tags="" position="1511,1978">They run to Aya&#x27;s house, and she hides him in it.
+[[(End)A while later]]</tw-passagedata><tw-passagedata pid="60" name="Sure, come with me" tags="" position="1389,2253">They run to Aya&#x27;s house, and she hides him in it.
 
 They think of what to do next but they don&#x27;t have many ideas.
 
 After a while, something happens. They see on tv that there&#x27;s going to be a live demonstration of reviving someone soon, so they get an idea : go to the lab and sabotage the thing.
 
-[[Just do it]]</tw-passagedata><tw-passagedata pid="61" name="[End]A while later" tags="" position="1557,2295">Aya ended up finding a new job with less responsibilities, and managed to get her life back on track. She doesn&#x27;t hear from her previous job again.
+[[Just do it]]</tw-passagedata><tw-passagedata pid="61" name="(End)A while later" tags="" position="1242,2513">Aya ended up finding a new job with less responsibilities, and managed to get her life back on track. She doesn&#x27;t hear from her previous job again.
 
 However, one day someone knocks at her door. When she opens, She sees guy for a few seconds before he shoots her in the chest and kill her instantly.
 
 When she opens her eyes, she sees she&#x27;s in a lab, tied to a table with thick metal cables. She knows she&#x27;s been revived, but she sees that there&#x27;s a lot more equipment than what she needed when she did it.
 
-Friend shows up, and explains to her that there&#x27;s a new step to the procedure, that will make her forget about everything and become fully loyal to her.</tw-passagedata><tw-passagedata pid="62" name="Just do it" tags="" position="1676,1970">They manage to sneak into the lab thanks to guy&#x27;s new powers.
+Friend shows up, and explains to her that there&#x27;s a new step to the procedure, that will make her forget about everything and become fully loyal to her.</tw-passagedata><tw-passagedata pid="62" name="Just do it" tags="" position="1504,2393">They manage to sneak into the lab thanks to guy&#x27;s new powers.
 
 What to do now?
 
-[[End]good sabotage idea]]
+[[(End)good sabotage idea]]
 
-[[[End]bad sabotage idea]]</tw-passagedata><tw-passagedata pid="63" name="End]good sabotage idea" tags="" position="1801,2091">THey change the solution ever so slightly so it won&#x27;t work anymore.
+[[(End)bad sabotage idea]]</tw-passagedata><tw-passagedata pid="63" name="(End)good sabotage idea" tags="" position="1506,2523">THey change the solution ever so slightly so it won&#x27;t work anymore.
 
-Next day, they see the thing live on tv. It fails miserably. The whole lab is discredited and loose all its funding, and isn&#x27;t able to continue working on that particular project.</tw-passagedata><tw-passagedata pid="64" name="[End]bad sabotage idea" tags="" position="1833,1928">They do something bad which triggers an alarm or whatever, and some guards come and arrest her (especially since they&#x27;re ready to deal with guy because they knew he escaped).
+Next day, they see the thing live on tv. It fails miserably. The whole lab is discredited and loose all its funding, and isn&#x27;t able to continue working on that particular project.</tw-passagedata><tw-passagedata pid="64" name="(End)bad sabotage idea" tags="" position="1639,2397">They do something bad which triggers an alarm or whatever, and some guards come and arrest her (especially since they&#x27;re ready to deal with guy because they knew he escaped).
 
-they get arrested and judged and everything, too bad.</tw-passagedata><tw-passagedata pid="65" name="[End]Give everything to a charity and stop dealing about it" tags="" position="286,1087">Aya suggests it&#x27;s better to give it to a charity because they&#x27;ll be the ones who can do the best possible things with it.
+they get arrested and judged and everything, too bad.</tw-passagedata><tw-passagedata pid="65" name="(End)Give everything to a charity and stop dealing about it" tags="" position="52,1018">Aya suggests it&#x27;s better to give it to a charity because they&#x27;ll be the ones who can do the best possible things with it.
 
-Fast forward a few years, they manage to find her back and give her a nobel prize against her will because it helped a lot.</tw-passagedata><tw-passagedata pid="66" name="[End]keep experimenting" tags="" position="282,1353">Guy suggests that they keep watching him to see what happens, and then keep experimenting.
+Fast forward a few years, they manage to find her back and give her a nobel prize against her will because it helped a lot.</tw-passagedata><tw-passagedata pid="66" name="(End)keep experimenting" tags="" position="27,1283">Guy suggests that they keep watching him to see what happens, and then keep experimenting.
 
-They see that guy is getting stronger and stronger, and seeing his vitals, probably immortal, so they freak out. They try to make something to get him back to normal, but given that they have way less resources considering that they can&#x27;t work at the lab anymore, it fails, and then start of a zombie apocalypse except that the zombies are immortal.</tw-passagedata><tw-passagedata pid="67" name="[Sell it to another company" tags="" position="243,1219">Friend&#x27;s idea is to sell it to another company so they can get a whole bunch of money and stop caring about anything. The other two are a bit reticent, but she lists companies with CEOs known for having decent morals. They end up selling it for way more money than they will ever need.
+They see that guy is getting stronger and stronger, and seeing his vitals, probably immortal, so they freak out. They try to make something to get him back to normal, but given that they have way less resources considering that they can&#x27;t work at the lab anymore, it fails, and then start of a zombie apocalypse except that the zombies are immortal.</tw-passagedata><tw-passagedata pid="67" name="It was an error of diagnostic" tags="" position="1301,1300">Aya says that everyone thought he was dead, but it was just an error of diagnostic that she found out only now. The man still seems confused, but a bit relieved.
+
+He asks to call his family.
+
+[[Say yes]]
+
+[[Say no]]</tw-passagedata><tw-passagedata pid="68" name="I don&#x27;t know, I just woke up too" tags="" position="1074,1347">Aya tries to explain that she&#x27;s in the same case than him and she doesn&#x27;t know what happened to them either. However, that is extremely suspicious, as she&#x27;s fully clothed and very visibly a scientist, and he&#x27;s naked and not a scientist.
+
+[[The man is freaking out]]</tw-passagedata><tw-passagedata pid="69" name="You just had an exhausting operation, you need rest" tags="" position="1519,1281">Guy is like, &quot;ok, what do I do now&quot;
+
+Aya tells him to wait for a while, while she goes and get some sedatives.
+
+When he&#x27;s back to sleep, she has more time to think about the situation.
+
+The main problem is that there aren&#x27;t many solutions to the problem, as what she told him is far from the truth and won&#x27;t work with either his family nor anyone else.
+
+[[Change the story]]</tw-passagedata><tw-passagedata pid="70" name="(End)Sell it to someone else" tags="" position="36,1152">Friend&#x27;s idea is to sell it to another company so they can get a whole bunch of money and stop caring about anything. The other two are a bit reticent, but she lists companies with CEOs known for having decent morals. They end up selling it for way more money than they will ever need.
 
 However, things go downhill because of how the company uses the thing, and the earth is dying at a faster rate because of too much people. A space program is made, but only the ones who were revived can survive the trip, and the treatment having been made super expensive, only a select few can do it.
 
-The three of them end up having to put everything they own into being revived in order to have a chance to survive.</tw-passagedata></tw-storydata>
+The three of them end up having to put everything they own into being revived in order to have a chance to survive.</tw-passagedata><tw-passagedata pid="71" name="Say yes" tags="" position="1039,1497">Aya don&#x27;t see why that would be a bad idea. She asks him for a number, which he gives. She calls the person (his mom), and tell her to come as soon as she can to the lab.
+
+(Meanwhile, clothes are given.)
+
+When mom gets there, there&#x27;s a bunch of tears and happiness.
+
+Aya thinks it&#x27;s a pretty good thing she has there.
+
+Some time pass. She managed to get the guy out of the lab without too much problems, and he&#x27;s back with his family. However, at some point, he comes back to her at her place of work.
+
+&quot;I think you lied to me. Now I have all these weird powers. What the fuck did you do.&quot;
+
+[[Finally tell him the truth]]</tw-passagedata><tw-passagedata pid="72" name="Say no" tags="" position="1264,1525">She tells him no, but she has to quickly find an excuse. She tries to explain that given the fact that they think he&#x27;s dead, they should be more careful, also they never know if he&#x27;s going to be fine or not since it&#x27;s a very rare case.
+
+He seems to be more or less ok with that. He asks what he should do now.
+
+[[Stay here]]</tw-passagedata><tw-passagedata pid="73" name="Change the story" tags="" position="1520,1526">She waits for him to wake up again, and tells him that she told him that to not make him freak out too much about the situation, but it isn&#x27;t the truth. He&#x27;s a bit suspicious, but it works.
+
+[[It was an error of diagnostic]]
+[[I don&#x27;t know, I just woke up too]]</tw-passagedata><tw-passagedata pid="74" name="(End)Euthanize him" tags="" position="1587,1048">Aya starts thinking about all the consequences of what she did</tw-passagedata><tw-passagedata pid="75" name="Finally tell him the truth" tags="" position="1038,1644">Aya finally explains to him what happened. 
+
+(if: $sociability &gt; 0)[He gets angry and start yelling.
+[[(End)Try to explain things calmly]]
+[[(End)Slowly try to grab the gun in your desk]]]
+(if: $sociability &lt;= 0)[He understands, but say she should have told him.
+[[(End)Work together]]
+]</tw-passagedata><tw-passagedata pid="76" name="Stay here" tags="" position="1264,1675">Aya explains to him that he has a weird condition that makes it too dangerous for himself to let him go out so he should stay hidden here. She takes him to her own lab and give him clothes.</tw-passagedata><tw-passagedata pid="77" name="(End)Work together" tags="" position="911,1639">Guy understands all the potential of what Aya did. They decide to keep it a secret and work together to make a better world.</tw-passagedata><tw-passagedata pid="78" name="(End)Try to explain things calmly" tags="" position="915,1772">Aya tries to explain calmly what this is all about. But guy only gets angrier and angrier, he doesn&#x27;t like what he&#x27;s become, being alive is not his place.
+
+He ends up throwing himself out of the window, and breaks his head a few floors below.
+
+Boss managed to cover Aya by confirming that it was a suicide and paying the right people for that, but Aya is fired. She doesn&#x27;t do much after that, and burns all of her research out of guilt.</tw-passagedata><tw-passagedata pid="79" name="(End)Slowly try to grab the gun in your desk" tags="" position="1054,1784">Aya tries to grab the gun in her drawer to threaten him so he leaves her alone. However, he sees that, and take it from her.
+
+She tries her best to explain after that, but it&#x27;s not enough and she gets shot.</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">/**
  * @license almond 0.3.0 Copyright (c) 2011-2014, The Dojo Foundation All Rights Reserved.
