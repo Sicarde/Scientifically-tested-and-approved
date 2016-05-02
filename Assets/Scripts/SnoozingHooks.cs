@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using UnityTwine;
 
 public class SnoozingHooks : MonoBehaviour {
-
 	public TwineTextPlayer uiTextPlayer;
 	public Image uiImage;
 	public Animator uiTitleScreen;
@@ -309,7 +308,6 @@ public class SnoozingHooks : MonoBehaviour {
 	// sea
 
 	public Sprite sea_image;
-	int sea_current = 0;
 
 	void sea_Enter() {
 		uiImage.sprite = sea_image;
