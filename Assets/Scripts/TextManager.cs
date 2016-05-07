@@ -22,24 +22,8 @@ public class TextManager : MonoBehaviour {
 			return;
 		}
 		text = gameObject.GetComponentInParent<Text>();
-		TextManager[] tManager = GameObject.FindObjectsOfType<TextManager>();
-		if (tManager.Length > 1) {
-			foreach (TextManager tm in tManager) {
-				if (tm.m_MyID != m_MyID && !tm.dead) {
-					textToPrint = text.text.Replace('/', '\n') + tm.textToPrint;
-					name = name + " " + tm.name;
-					tm.dead = true;
-					DestroyObject(tm.gameObject);
-					return;
-				}
-			}
-		} else {
-			textToPrint = text.text.Replace('/', '\n');
-		}
 		textToPrint = text.text.Replace('/', '\n');
-		if (textToPrint.Length == 0) {
-			gameObject.SetActive(false);
-		}
+		CheckDuplicate();
 	}
 
 	int SentenceLenght(string s, int currentSize) {
@@ -83,7 +67,23 @@ public class TextManager : MonoBehaviour {
 		}
 	}
 
+	void CheckDuplicate() {
+		TextManager[] tManager = GameObject.FindObjectsOfType<TextManager>();
+		foreach (TextManager tm in tManager) {
+			if (tm.m_MyID != m_MyID && !tm.dead && !dead) {
+				if (m_MyID < tm.m_MyID) {
+					textToPrint = textToPrint + "\n" + tm.textToPrint;
+					name = name + " " + tm.name;
+					tm.dead = true;
+					DestroyObject(tm.gameObject);
+				}
+				return;
+			}
+		}
+	}
+
 	IEnumerator UpdateText() {
+		CheckDuplicate();
 		while (text.text.Length > 0 && text.text[0] == '\n') {
 			text.text = text.text.Substring(1, text.text.Length - 1);
 		}
