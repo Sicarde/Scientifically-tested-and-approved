@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class TextManager : MonoBehaviour {
 	public bool over = false;
 	bool dead = false;
-	int charPerLine = 47;
-	int nbLines = 4;
+	int charPerLine = 76;
+	int nbLines = 3;
 	float waitBetweenCharPrint = 1.0f;
 	string textToPrint;
 	Text text;
