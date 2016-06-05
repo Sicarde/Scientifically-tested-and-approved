@@ -371,7 +371,6 @@ public class Story: TwineStory
 	{
 		morals = morals - 1;
 		sociability = sociability - 1;
-		yield return new TwineText(@"");
 		yield return new TwineText(@"She does that in the middle of the night.");
 		yield return new TwineText(@"");
 		yield return new TwineLink(@"Test on human", @"Test on human", @"Test on human", null, null);	
