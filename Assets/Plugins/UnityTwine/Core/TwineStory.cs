@@ -117,20 +117,22 @@ namespace UnityTwine {
 			
 			// Indicate specified passage as next
 			_passageWaitingToEnter = passageName;
-
+			Debug.Log("going to: " + passageName);
 			if (CurrentPassageName != null) {
 				this.State = TwineStoryState.Exiting;
-
+				Debug.Log("exit state");
 				// invoke exit hooks
 				HooksInvoke(HooksFind("Exit", reverse: true));
 			}
 
 			if (this.State != TwineStoryState.Paused) {
+				Debug.Log("enter: " + passageName);
 				Enter(passageName);
 			}
 		}
 
 		void Enter(string passageName) {
+			Debug.Log("ENTERING " + passageName);
 			_passageWaitingToEnter = null;
 
 			this.Output.Clear();
@@ -307,6 +309,7 @@ namespace UnityTwine {
 
 		public void Advance(TwineLink link)
 		{
+			Debug.Log("story advance");
 			if (link.Setters != null)
 				link.Setters.Invoke();
 

@@ -9,6 +9,7 @@ public class MainMenuScript : MonoBehaviour {
 
 	public void Play() {
 		Debug.Log("Play");
+		PlayerPrefs.SetInt ("shouldLoadLevel", 0);
 		Application.LoadLevel("Test");
 	}
 	
@@ -43,7 +44,8 @@ public class MainMenuScript : MonoBehaviour {
 			int i = 1;
 			while (i <= 3) {
 				string summ = PlayerPrefs.GetString("Summary" + i.ToString());
-				if (summ.Length == 0) {
+				if (PlayerPrefs.GetString("SavedLevel" + i.ToString()).Length == 0) {
+					Debug.Log("Empty slot: " + i.ToString());
 					PlayerPrefs.SetString("SavedLevel" + i.ToString(), "Beginning");
 					PlayerPrefs.SetString("paramsValue" + i.ToString(), "");
 					PlayerPrefs.SetString("Summary" + i.ToString(), "Empty slot");

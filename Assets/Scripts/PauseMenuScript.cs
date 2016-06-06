@@ -28,7 +28,6 @@ public class PauseMenuScript : MonoBehaviour {
 
 	void Load(int slot) {
 		string passageName = PlayerPrefs.GetString ("SavedLevel" + slot.ToString());
-		Debug.Log("Load: " + passageName);
 		string paramsValue = PlayerPrefs.GetString("paramsValue" + slot.ToString());
 		string[] paramsValues = paramsValue.Split('|');
 		long i = 0;
@@ -37,8 +36,10 @@ public class PauseMenuScript : MonoBehaviour {
 			storyScript[vars[i]] = var;
 			i++;
 		}
+		storyScript.AutoPlay = false;
 		storyScript.GoTo(passageName);
-		Resume();
+		GameObject.FindObjectOfType<TwineTextPlayer>().StartStory = false;
+		Debug.Log("Load: " + passageName);
 	}
 
 	void Update() {
@@ -64,12 +65,12 @@ public class PauseMenuScript : MonoBehaviour {
 		PlayerPrefs.SetString("SavedLevel" + slot.ToString(), storyScript.CurrentPassageName);
 		string paramsValue = "";
 		foreach (string var in vars) {
-			//if summary
-			//PlayerPrefs.SetString("Summary" + slot.ToString(), summary);
-			//else
 			addParamToString(ref paramsValue, var);
 		}
-		Debug.Log(paramsValue);
+		/*string summary = storyScript["Summary"];
+		if (summary.Length > 0) {
+			PlayerPrefs.SetString("Summary" + slot.ToString(), summary);
+		}*/
 		PlayerPrefs.SetString("paramsValue" + slot.ToString(), paramsValue);
 	}
 
@@ -92,7 +93,8 @@ public class PauseMenuScript : MonoBehaviour {
 			int i = 1;
 			while (i <= 3) {
 				string summ = PlayerPrefs.GetString("Summary" + i.ToString());
-				if (summ.Length == 0) {
+				if (PlayerPrefs.GetString("SavedLevel" + i.ToString()).Length == 0) {
+					Debug.Log("Empty slot: " + i.ToString());
 					PlayerPrefs.SetString("SavedLevel" + i.ToString(), "Beginning");
 					PlayerPrefs.SetString("paramsValue" + i.ToString(), "");
 					PlayerPrefs.SetString("Summary" + i.ToString(), "Empty slot");
