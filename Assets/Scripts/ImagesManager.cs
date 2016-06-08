@@ -12,6 +12,10 @@ public class ImagesManager : MonoBehaviour {
 	public List<Sprite> charactersExpression;
 	public List<string> expressionNames;
 
+	public GameObject backgroundImageTemplate;
+	public List<Sprite> backgrounds;
+	public List<string> backgroundPassageUsed;
+
 	[HideInInspector]
 	public string currentDisplayedCharacter = "";
 	private Image _characterImage;
@@ -90,10 +94,21 @@ public class ImagesManager : MonoBehaviour {
 		}
 	}
 
+	void UpdateBackground() {
+		int i = 0;
+		foreach (string passageUsedName in backgroundPassageUsed) {
+			if (_currentPassageName == passageUsedName) {
+				backgroundImageTemplate.GetComponent<Image>().sprite = backgrounds[i];
+			}
+			i++;
+		}
+	}
+
 	void Update() {
 		if (_story.CurrentPassageName != _currentPassageName) {
 			_currentPassageName = _story.CurrentPassageName;
 			DisableCharacterImage();
+			UpdateBackground();
 		}
 	}
 }
