@@ -17,6 +17,10 @@ public class LinkManager : MonoBehaviour {
 		_text.enabled = false;
 	}
 
+	public bool HasBeenEnabled() {
+		return (_isVisible && _text.enabled && _button.enabled);
+	}
+
 	public void EnableLink() {
 		_button.enabled = true;
 		_text.enabled = true;

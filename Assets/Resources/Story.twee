@@ -1,7 +1,15 @@
 :: StoryTitle
-New Science
+STAC: Playtest
 
 :: UserScript[script]
+
+
+
+
+
+
+
+
 
 
 
@@ -39,16 +47,38 @@ New Science
 
 
 
+
+
+
+
+
+
+
+
 :: Beginning
-Recently, Aya's pet Oyo died of an illness. She is still sad, but life goes on.
+*Crash*
 
-A while later, she feels a bit better, but still shows up (drunk?) in her lab in the middle of the night. She decided to do experiments on Oyo because she feels like it's the right thing to do to make him still important to her, even after his death.
+"Whoops."
 
-There was an old project she was working on a long time ago, but which she completely abandoned. She gets its data back, and continues a bit, but on Oyo.
+Maybe that last beer had been too much. But it had felt good at the time, so I didn't really care.
 
-At some point she notices that holy shit she's about to get some results. 
+And then I was at the lab at midnight, slouched in my chair like I had been hastily thrown there. I was still very drunk, but my mind was racing, which was welcomed. It hadn't happened in a while.
 
-[[Question]]
+After all, I had lost a very precious friend. Oyo, my parrot, had died a few days before. He was a beautiful scarlet macaw, and one of my closest friends. Yes, that sounds pretty lame of me, but I never cared that much. Well, except after losing him.
+
+A small idea kept poking me in the head. It was a pretty old project, on which I hadn't worked in a very long time.
+
+"Maybe... Yes, maybe that could work."
+
+I grabbed a few notes from my drawer and got to work. Everything quickly came back to me, and the solution I needed only took me an hour to prepare. All I needed then was to add a specific new component...
+
+Stirring the solution made had a completely different effect than what was in my notes, and I feverishly wrote down everything. It was bright blue instead of red.
+
+Now the goal was to test it on something. And I had an idea, even though a part of my mind was telling me it felt wrong. I quickly ran home and grabbed Oyo's body that I kept in a box, and went back to the lab before getting the idea to abandon. I still had no idea how the lab's guards let me in at almost two in the morning.
+
+I carefully injected the solution directly into his heart. Now I felt really bad, and was on the verge of tears. I had no idea what I was expecting out of this.
+
+[[What to do next?]]
 
 <<set $sociability = 0>>
 <<set $suspicion = 0>>
@@ -57,89 +87,162 @@ At some point she notices that holy shit she's about to get some results.
 <<set $metFriend = 0>>
 
 :: 10V
-Breakthrough! Oyo starts moving. Soon, he's back to life, but completely disoriented. Aya hurriedly grabs some water and food (there's always some in her lab for when she sneaks him in) and gives him.
+Surprisingly, it didn't take long to start working. My heart was beating fast.
 
-Aya thinks about it : all the implications of it, the possible uses, how "HOLY SHIT I FOUND THAT WHAT DO I DO"
+"Oh my god. Oh my god I can't believe it."
 
-Her best friend calls her to ask for news, she has to choose whether she tells her or not.
+Oyo's heart was beating. It took him some time, but then he woke up, shaking his feathers and looking around.
 
-[[Think about it on her own]]
+"It worked. It freaking worked!"
 
-[[Ask her best friend for help]]
+I started laughing uncontrollably. I just made the breakthrough of the century. I found a way to resurrect things!
 
-:: Think about it on her own
+Oyo's cries got me out of my victory dance.
+
+"Yes, yes, don't worry, I'm here."
+
+I grabbed some water and food that were left in my desk from the times when I would sneak him in (perks of having understanding coworkers). He still looked disoriented, but accepted them happily.
+
+I then took some time to think about the whole thing. I resurrected someone. No, not someone, something. It was an animal. If I wanted to make more progress on this, I had to test on other things. People, maybe. I didn't want to think about that yet.
+
+*Rring rring!*
+
+An incoming call from my best friend, Akira Masahiro, which almost gave me a heat attack. Sometimes, her knowing how late I tend to work make her take some liberties.
+
+Should I answer and tell her everything?
+
+[[No, think about it on your own.]]
+
+[[Yes, ask her for help.]]
+
+:: No, think about it on your own.
 <<set $sociability = $sociability - 1>>
 
-She thinks it's a bad idea to share it with anyone for now, so she doesn't say anything and gives an excuse to not go out that evening. She goes home and sets up Oyo comfortably.
+Akira: "Hey Aya!"
+
+Aya: "Hey."
+
+Akira: "How are you doing? It's been a while, so, I thought, why not call?"
+
+Aya: "I'm... Fine, thanks. What about you?"
+
+Akira: "That doesn't sound really *fine* to me."
+
+Aya: "I had a rough day at work. Nothing to worry about. Thanks for calling."
+
+Akira: "Let me guess. There are some things you still need to wrap up so you don't have time to talk right now?"
+
+Aya: "... Yeah. Sorry about that."
+
+Akira: "No, it's fine. Don't worry. I'll see you later then, bye!"
+
+Aya: "Bye."
+
+I didn't like shutting her down like that, but it was necessary. I still wasn't ready to share my secret to anyone. I brought Oyo back at home, and tried to sleep for a while, despite the excitement.
 
 [[Day two]]
 
-:: Ask her best friend for help
+:: Yes, ask her for help.
 <<set $sociability = $sociability + 1>>
 
-She says she found something huge, and she doesn't know what to do and oh my god everything is overwhelming right now. Best friend calms her down, invites her to eat somewhere, and they spend the evening talking about it.
+Akira: "Hey Aya!"
+
+Aya: "Hey."
+
+Akira: "How are you doing? It's been a while, so, I thought, why not call?"
+
+Aya: "I'm... Fine, thanks. What about you?"
+
+Akira: "That doesn't sound really *fine* to me."
+
+Aya: "Well... Something sort of... Happened."
+
+Akira: "What? What happened? Aya are you alright?"
+
+Aya: "Yes, yes, I'm alright don't worry. It's just... You remember that one pet project I had a while ago? And I didn't seem to be able to find a solution so I abandoned it?"
+
+Akira: "Uhh, yeah. Wait, don't tell me..."
+
+Aya: "Yes, I did it."
+
+Akira: "Holy shit Aya, this is huge! Who did you... Wake up?"
+
+Aya: "No one yet! It was just... Well, it's Oyo."
+
+Akira: "Oh my god."
+
+Aya: "Akira, I... I have no idea what to do!"
+
+Akira: "Ok, stay calm. For now you should just go to sleep, OK? I'll join you at the lab tomorrow and we'll talk about it."
+
+Aya: "Ok, thank you Akira. See you tomorrow, then."
+
+Akira: "See you!"
+
+I hung up first. She was right, I had to try and go to sleep. It was hard to fall asleep that night, but at some point, I managed.
 
 [[Day two]]
 
 :: Day two
-Aya has to make sure that what she did actually works and wasn't just a coincidence. It means more tests on dead things, and in particular, she will have to test it on a human body at some point.
+The next day, I didn't look very fresh, thanks to the two small hours of sleep I managed to get. When I arrived at the lab, I set all my current work aside to think of the most urgent one.
+
+I had to continue testing if I wanted to be sure I didn't hallucinate what happened the night before (the alcohol didn't help me make sure of that.)
 
 <<if $sociability > 0>>
-[[Do the thing with friend]]<<endif>>
+[[Experiment with Akira.]]<<endif>>
 <<if $sociability <= 0>>
-[[Do the thing alone]]
 <<endif>>
 
 
 
-:: Do the thing with friend
+:: Experiment with Akira.
 <<set $sociability = $sociability + 1>>
 <<set $suspicion = $suspicion + 1>>
 <<set $metFriend = 1>>
 
-She decides that she should ask her friend for help in order to do the testing so she can confirm she's not crazy. She calls her, and she comes over.
+As expected, Akira came to help me. Her good mood and energy was contagious, and we went to work right away.
 
-Science happens.
+When you work in a huge scientific research facility, borrowing dead animals to another laboratory is a piece of cake. On the few ones we used to do our tests, everything worked properly again, giving us a surge of adrenaline each time, and prompting many high fives.
 
-They do tests on rats, no problem, they do tests on chimpanzees, they have to fix the dosage but eventually it works.
-
-At some point boss shows up. They have to explain what they're doing.
+The problem came when we tried the test on a chimpanzee, the closest animal we could get to a human. The first test didn't work: the solution wasn't strong enough. We Managed to do a second one with a better one, but right after that our employer himself showed up, asking what the hell we were doing. 
 
 [[Tell it's for a personal project.]]
 
 [[Try to find an excuse.]]
 
-[[Let friend handle.]]
+[[Let Akira handle.]]
 
-:: Do the thing alone
+:: Experiment on your own.
 <<set $metFriend = -1>>
 
-She decides that it would be better if she did the testing alone because it's a pretty dark thing to do.
+I decided to do it on my own. I didn't gather the courage to tell Akira about it the night before, and I still didn't have it at that point.
 
-She tests on other small animals first to make sure that it works, which it does.
+When you work in a huge scientific research facility, borrowing dead animals to another laboratory is a piece of cake. On the few ones I used to do my tests, everything worked properly again, giving me a surge of adrenaline each time.
 
-She then asks for one chimpanzee, and see that the dosage isn't strong enough. At some point, boss shows up, but she's so stressed about staying hidden that she manages to hide the body before he enters the room and she pretends to work on whatever it is she's supposed to be working on.
+The problem came when I tried the test on a chimpanzee, the closest animal I could get to a human. My employer himself showed up, asking what the hell I was doing. I barely avoided more questions thanks to him being in a hurry, and just telling me to stop fooling around and get back to work. Which I did. The rest would have to wait for later. I still manage to take a few notes on the chimpanzee: it almost worked, but the solution needed to be stronger. I would have to think about that later if I wanted to make progress.
 
-[[Go to next step]]
+[[Later.]]
 
 :: 1V
 <<set $fail = $fail + 1>>
 
-She tries that, but nothing happens.
+"... Nothing. I should probably try a bit more."
 
-[[Question]]
+[[What to do next?]]
 
 :: 100V
 <<set $fail = $fail + 1>>
 
-She gets a flashback from one fateful class back when she was in college where her lab partner fried a mouse, and she decides that she should definitely not do that.
+"Did I... Did I really try to do that? Aya, don't you remember any of your physics class?"
 
-[[Question]]
+[[What to do next?]]
 
-:: Question
-Currently, he was injected with a solution she had worked on, now she has to apply current to him.
+:: What to do next?
+A generator, cables, and those patches you put on people's skin to transmit a current. Everything was set up.
 
-She should make sure that it's sufficient to be working, but not too much so she doesn't fry him.
+"Please let this work."
+
+The goal was to make some current pass through his body to make his nervous system work again. The question was: how much was enough to work, but not too much to fry him?
 
 [[1V]]
 
@@ -147,8 +250,9 @@ She should make sure that it's sufficient to be working, but not too much so she
 
 [[100V]]
 
-:: Go to next step
-Now she has to find a human body, which is way harder to get than just ask another lab for a spare chimpanzee. She asks around, and learns that she has to wait for the body of a new donor to come to the lab.
+:: Later.
+Now I had to find a human body to do my tests. Finding one is way harder than animal ones, because they are kept more securely, tracked, and usually already embalmed before anyone has the chance to put their hands on it.
+
 
 [[Ask around]]
 
@@ -158,7 +262,7 @@ Now she has to find a human body, which is way harder to get than just ask anoth
 <<set $morals = $morals - 1>>
 <<set $sociability = $sociability - 1>>
 
-She does that in the middle of the night.
+Thankfully, I know of a lab that stores a body, and even more thankfully, no one was around it when I sneaked in, late in the evening.
 
 [[Test on human]]
 
@@ -167,17 +271,17 @@ She does that in the middle of the night.
 <<set $suspicion = $suspicion + 1>>
 <<set $morals = $morals + 1>>
 
-<<if $sociability > 0>>She asks around the lab, and she does that with enough skill so it works and she manages to meet a teacher who lets her have a body. She just has to do that in the evening, after classes.
+<<if $sociability > 0>>I tried asking around the facility if anyone knew of a dead body I could use for research. Thankfully, I was convincing enough not to raise too many questions (weird personal research problems are pretty common here, after all), and someone kindly let me in their lab late at night to do what I needed.
 [[Test on human]]<<endif>>
-<<if $sociability <= 0>>She asks around, but no one really know or want to let her have a body, so she has to do that by herself.
+<<if $sociability <= 0>>I tried asking around the facility if anyone knew of a dead body I could use for research. Some people pointed a specific person to me, but they refused, saying that I had nothing to do with anatomy anyway. Well, I don't have their permission, but at least I know where to find my body.
 [[Sneak in the dead storage]]<<endif>>
 
 
 
 :: Test on human
-She does her test on a human body, finally.
+The whole scene felt weird. I had the body of a man laying naked in front of me, and I was about to bring him back to life.
 
-However, the question is : what dosage?
+Now the question was: the solution barely worked on the chimpanzee last time. What quantities should I use?
 
 [[Same as for chimpanzee]]
 
@@ -188,23 +292,24 @@ However, the question is : what dosage?
 :: Same as for chimpanzee
 <<set $fail = $fail + 1>>
 
-The body jerks a bit, but nothing happens.
+The body jerks a bit, but nothing happened. I was so close!
 
 [[Test on human]]
 
 :: Less than chimpanzee
 <<set $fail = $fail + 1>>
 
-Nothing happens.
+Nothing happened. I must not have used enough of the solution, I thought.
 
 [[Test on human]]
 
 :: More than chimpanzee
-Victory! The person comes back to life.
+Victory! The man moves a bit, then opens his eyes.
 
-They look a bit sick and disoriented, but alive. They have no idea what happened from the moment of their death.
+He seeemed disoriented and confused, but very alive. 
 
-Now she has to do something with that person. Especially since he's starting to ask questions.
+Slowly, I started realizing what I just did. I brought someone back to life. A whole human. And now I would have to deal with that, and all his questions.
+
 <<if $fail > 3>>
 [[(End)Something's wrong]]<<endif>>
 
@@ -214,463 +319,74 @@ Now she has to do something with that person. Especially since he's starting to 
 [[Knock him out]]
 <<endif>>
 
-:: (End)Something's wrong
-Because you're not that good at what you're doing, the guy you reanimated just died.
 
-Game over.
+:: (End)Something's wrong
+However, after a few seconds, the man suddenly started looking terrified, and clutched his chest. I did my best to help him, but I was too late, and soon enough he was dead again.
+
+That night marked me forever. Maybe playing God wasn't for me after all.
+
+
 
 :: Tell it's for a personal project.
 <<set $morals = $morals + 1>>
 
-Boss says you shouldn't be working on personal things during work time and just leaves you there.
+Aya: "It's for a personal project. Sorry about that sir, we'll clean everything up and get back to work. It won't happen again."
 
-[[Go to next step]]
+He seemed pleased by these words, because he just nodded and went out.
+
+[[Later.]]
 
 :: Try to find an excuse.
 <<set $suspicion = $suspicion + 1>>
 <<set $morals = $morals - 1>>
 
-You try to find an excuse but you're pretty incoherent. Boss is annoyed and just leaves after urging you to go back to your actual work.
+Aya: "It's, uh... We don't really know. There were... Already here when we showed up this morning. I thinks they're from Dr Snow's lab, or something..."
 
-[[Go to next step]]
+Employer: "I don't want any excuses. Clean that up and go back to work."
 
-:: Let friend handle.
+And with that, he was gone. We didn't have any other choice but to do what we were asked.
+
+[[Later.]]
+
+:: Let Akira handle.
 <<set $suspicion = $suspicion - 1>>
 
-You look expectantly at your friend, who explains that another scientist asked you to keep these animals for a while because of security concern, and launches into a whole monologue about putting security first. That seems to work, but you are still urged to go back to work.
+I looked expectantly at Akira, who understood. She explained that another scientist asked us to keep these animals for a while because of some security concerns, and went into a long rant about how security must be put first. It seemed to work, as our employer left with an annoyed wave of the hand. Still, we both went back to work, in order to not raise more suspicion.
 
-[[Go to next step]]
+[[Later.]]
 
 :: Explain the situation
-Aya tries explaining the situation to the guy. He has trouble believing it.
+This is the end of the first part of the story.
 
-<<if $sociability > 0>>But she's convincing enough that he believes her.
-[[More talking]]<<endif>>
-<<if $sociability <= 0>>
-[[The man is freaking out]]<<endif>>
+With this choice, Aya decides to be honest and explain the truth to the man she just woke up. Your previous choices will also follow you, as they will modify the outcome of the story as it continues.
 
-<<set $sociability = $sociability + 1>>
-<<set $morals = $morals + 1>>
+If you want updates on the next parts of the story, please give us your email in the GForm.
+
+Thanks for playing :D
 
 :: Lie
-Aya is freaking out, she doesn't know what to do with the guy because he's asking a lot of questions. She thinks he can't handle the truth, so she has to invent a lie.
+This is the end of the first part of the story.
 
-<<set $suspicion = $suspicion - 1>>
-<<set $morals = $morals - 1>>
+With this choice, Aya decides to lie to the man, because she thinks he will not believe her otherwise. Your previous choices will also follow you, as they will modify the outcome of the story as it continues.
 
-<<if $sociability <= 0>>However, the guy starts to get really impatient really fast, he seems to be remembering that he actually died.
-[[The man is freaking out]]<<endif>>
-<<if $sociability > 0>>
-[[It was an error of diagnostic]]
-[[I don't know, I just woke up too]]
-[[You just had an exhausting operation, you need rest]]<<endif>>
+If you want updates on the next parts of the story, please give us your email in the GForm.
+
+Thanks for playing :D
 
 :: Knock him out
-Aya decides that it's safer if he doesn't get out of there and start speaking and asking questions. She takes a heavy thing and hits him on the back of the head.
+This is the end of the first part of the story.
 
-<<set $sociability = $sociability - 1>>
+With this choice, Aya freaks out, and knocks the man out again to get some time to think about what she just did. Your previous choices will also follow you, as they will modify the outcome of the story as it continues.
 
-What to do with the "body?"
+If you want updates on the next parts of the story, please give us your email in the GForm.
 
-:: More talking
-Now they have to decide what to do, possibly together. Guy proposes his help because he's not too bad at solving problems.
+Thanks for playing :D
 
-What to do next?
+:: Introduction
+Hello, and welcome to this playtest of Scientifically Tested and Approved!
 
-[[Tell someone else about it.]]
+This is a visual novel. The main part of this game is the story. Today, you will only be able to play through the first part of it. This is a work in progress, so it may not be perfect, so you will be given the opportunity to help us improve with a questionaire at the end.
 
-[[Keep it your secret forever.]]
+Enjoy!
 
-:: Tell someone else about it.
-They speak for a while, and decide to tell best friend about it.
-
-<<if $metFriend > 0>>Next day, Aya calls her, explaining how the experiment went and that it worked and she now was in presence of the first human to ever be brought back to life.<<endif>>
-<<if $metFriend < 0>>Aya calls her friend, and has to explain everything to her but in the end she gets to it. Friend has to come all the way to her house to see the death certificate with her own eyes to believe her, and finally does.<<endif>>
-
-They think about what to do, and pool their ideas.
-
-[[(End)Give everything to a charity and stop dealing about it]]
-
-[[(End)keep experimenting]]
-
-[[(End)Sell it to someone else]]
-
-:: Keep it your secret forever.
-Aya suggests that they shouldn't tell anyone about it and keep it to themselves. But what to do with it?
-
-[[(End)Destroy the solution and all the notes.]]
-
-[[(End)Keep it for themselves, but use it for good reasons.]]
-
-:: (End)Destroy the solution and all the notes.
-They decide it's a bad thing to have that much power for two people, so they should destroy the solution.
-
-With a bit of paperwork and talking to people, Aya manages to make the disparition of a corpse go unnoticed. Guy gets a change of identity, and starts working for some shady thing or another.
-
-The end
-
-:: (End)Keep it for themselves, but use it for good reasons.
-
-
-:: The man is freaking out
-He's like HOLY SHIT WTF HAPPENED TO ME PLEASE LET ME OUT.
-He's getting violent and threatening Aya.
-
-[[Try to speak to him]]
-
-[[Use the force]]
-
-:: Try to speak to him
-<<set $sociability = $sociability + 1>>
-<<set $suspicion = $suspicion - 1>>
-
-You get back a little and try to speak to him, tell him it's going to be ok, yadda yadda.
-
-[[More talking]]
-
-:: Use the force
-<<set $morals = $morals - 1>>
-<<set $sociability = $sociability - 1>>
-<<set $suspicion = $suspicion + 1>>
-
-She tries to knock him out. Considering he's bigger and stronger than her, that doesn't work much, so he pushes her down and run away. She tries to go after him but loses him quickly.
-
-[[Go tell boss about it]]
-
-:: Go tell boss about it
-<<set $morals = $morals + 1>>
-
-Aya decides it's safer to go and tell her boss about it since there's a crazy naked man running around in the facility, which is probably not a good thing.
-
-She has to explain the whole reviving thing, boss is amazed, and tells her to go home and not get out until he calls her.
-
-[[Next day]]
-
-:: Next day
-Boss calls her and tell her to come as soon as she can.
-
-When she's there, he tells her that the man was caught and locked inside the lab with guards, but that's not her problem anymore. He asks about what she did, and if it's reproducible.
-
-[[No]]
-
-[[Yes]]
-
-:: No
-<<set $morals = $morals + 1>>
-
-Aya doesn't want boss to put his hands on this so she refuses to do it.
-
-Threatening happens.
-
-[[Yes]]
-
-:: Yes
-<<set $morals = $morals - 1>>
-
-He then asks her to stay close and not tell anything to anyone.
-
-Later in the night, he calls her and tell her that there is someone he wants her to bring back to life in particular, and takes her to the body.
-
-[[Do it]]
-
-[[Pretend it didn't work]]
-
-:: Do it
-She prepares more of the solution and inject it to the body. And tadam, it works!
-
-Boss is happy because it was his wife, cue a very sentimental scene.
-
-Boss tells Aya she'll get a so many % raise if she continues doing that, shares her recipe, and lead the whole thing.
-
-[[Accept]]
-
-[[Refuse]]
-
-:: Pretend it didn't work
-Boss is not happy. He sends her home and tells her not to tell anyone about it or else she will get problems.
-
-[[Next day again]]
-
-:: Refuse
-Mild threatening happens. He tells Aya that she if she still chooses to refuse, there's going to be consequences.
-
-[[Accept]]
-
-[[Still refuse]]
-
-:: Accept
-She accepts.
-
-In the next few days, everything is set up so she has a whole team for herself.
-
-<<if $morals > 0>>
-[[(End)Do good]]<<endif>>
-<<if $morals <= 0>>
-[[(End)Do bad]]<<endif>>
-
-:: (End)Do good
-With all that power, Aya tries to do her best to help people. 
-
-:: (End)Do bad
-The call of money and power is strong, and Aya became rich selling her solution to multiple companies. It threw the world into chaos, because humanity wasn't ready for that. Being revived became a rich person thing, and the richest ones basically became immortal.
-
-Congrats, you fucked up everything!
-
-:: Ask friend about that
-Aya goes to the new lab of her friend and ask her what the fuck is this all about.
-
-Friend explains that boss came to her because Aya refused to work for him, and she accepted because she was given lots of money.
-
-She adds that Aya isn't even needed anymore anyway, and that she's basically fired and she should get all her stuff from her lab.
-
-[[Go get stuff]]
-
-:: Shit.
-Friend is tied on a chair in the middle of the room.
-
-Boss tells Aya that she has a choice. Either watch her friend get tortured, or cooperate. Now he doesn't want to work with her because he doesn't trust her, so he asks her to just give him the instructions.
-
-[[Give the instructions]]
-
-[[Refuse to say anything]]
-
-:: Next day again
-Aya gets home, but pass by the lab and grab any clue of what she was doing in order to hide it.
-
-<<if $metFriend > 0>>Next day, you learn that the person who Aya was supposed to revive is alive. Turns out boss asked her best friend for help, and she accepted. She feels like shit.
-[[Ask friend about that]]<<endif>>
-
-<<if $metFriend < 0>>Next day, boss calls Aya and tell her to join him in a weird place. She accepts, not knowing what he wants. When she gets there, she is locked inside with him and a bunch of scary people.
-[[Shit.]]<<endif>>
-
-:: Give the instructions
-Boss smiles, but does nothing to free friend. he tells Aya that he will keep her and he will let her go when he's sure that Aya isn't a danger to him anymore.
-
-[[(End)Go home, defeated]]
-
-:: Refuse to say anything
-Aya refuses to give the solution because she doesn't trust boss. He's pissed, and waves to one of his men to start hitting friend.
-
-[[Give the instructions]]
-
-[[Still don't give in]]
-
-:: Still don't give in
-Friend is in bad shape. She starts begging her to just tell him.
-
-[[Give the instructions]]
-
-[[Don't do anything]]
-
-:: Don't do anything
-Aya explains that this is too dangerous and she can't do that no matter what. Friend stopped moving, and boss tells his men to stop.
-
-DEUS EX MACHINA!!!!! The guy who was revived crashes in, beats up everyone including boss, unties friend, grabs Aya by the hand and runs out.
-
-Aya is like WTF.
-
-[[Go hide somewhere]]
-
-:: Go hide somewhere
-Aya asks the guy what the fuck he thinks he's doing.
-
-He explains that the guards weren't strong enough to keep him in because he got some weird powers that made him stronger.
-
-They quickly go back to the actual problem : friend is still unconscious, and in a bad shape. Guy scolds Aya because she shouldn't have let that happen.
-
-At some point they see that nothing more can be done for her.
-
-[[(End)Or does it?]]
-
-:: (End)Go home, defeated
-Aya goes home. A few days later, she learns that friend is let out too. Meanwhile, Aya had given boss all her stuff about the experiments.
-
-Basically same end than do bad but Aya is just miserable.
-
-:: (End)Or does it?
-They remember why they are here in the first place : the solution. Guy goes quickly at Aya's place to grab everything they need while Aya sneaks in the lab to get all the stuff they need, then they revive friend.
-
-Boss managed to frame them for some crime or another, so they have to stay on the run. Thankfully, they get in contact with the right kind of person, which give them access to chemicals and stuff to keep doing what they do. They end up being the founders of an underground group of super powerful people who do neither good nor bad, but live together, and protect each other.
-
-Finish that one on Aya being killed in order to be brought back again.
-
-:: Still refuse
-Boss is not happy. However, his wife tells him that he should just let it go and don't care about it. The confusion gives Aya the time necessary to run away.
-
-[[Run away]]
-
-:: Run away
-She has no idea what's going to happen to her, but she just runs to her home. She passes by the lab to make sure she doesn't leave any clue behind, and hides everything in her home.
-
-Next day, she wonders what's going to happen to her. She turns on the tv and sees that she's wanted by the authorities because boss said she stole important secrets. She leaves as soon as she can, taking the most important part of her research, destroying the rest, and also taking a few necessary things.
-
-She has no idea where to go though.
-
-[[(End)Go hide in a random place]]
-
-[[Risk going back to the lab to get the guy]]
-
-:: (End)Go hide in a random place
-Apparently she does a pretty good job at hiding, because no one finds her, not even friend. At some point she ends up burning the rest of her research because she thinks no single human should have such power.
-
-:: Risk going back to the lab to get the guy
-She tries to go back to the lab to let guy free. She sees friend at some point, and ask her for help in that. They free him, and they run away together.
-
-<<if $metFriend < 0>>They explain everything to friend, who thinks it's crazy.<<endif>>
-
-[[(End)Together, take over the world]]
-
-:: (End)Together, take over the world
-At some point during the chase, Aya is killed. Her body is carried by friend and guy, and they hide well enough to end up finding a way to revive her.
-
-They live together for a while. At some point, they find out that people who were revived become a lot stronger, and almost immortal. They decide to kill friend and revive her too, and to lead a revolution.
-
-:: Go get stuff
-Aya goes to her lab, to grab everything. When she's about to leave, guy suddenly catches up with her and tell her that he managed to escape and she needs to help him.
-
-[[I can't do anything]]
-
-[[Sure, come with me]]
-
-:: I can't do anything
-Aya says there's nothing she can do and ask him to leave her alone, before going home.
-
-[[(End)A while later]]
-
-:: Sure, come with me
-They run to Aya's house, and she hides him in it.
-
-They think of what to do next but they don't have many ideas.
-
-After a while, something happens. They see on tv that there's going to be a live demonstration of reviving someone soon, so they get an idea : go to the lab and sabotage the thing.
-
-[[Just do it]]
-
-:: (End)A while later
-Aya ended up finding a new job with less responsibilities, and managed to get her life back on track. She doesn't hear from her previous job again.
-
-However, one day someone knocks at her door. When she opens, She sees guy for a few seconds before he shoots her in the chest and kill her instantly.
-
-When she opens her eyes, she sees she's in a lab, tied to a table with thick metal cables. She knows she's been revived, but she sees that there's a lot more equipment than what she needed when she did it.
-
-Friend shows up, and explains to her that there's a new step to the procedure, that will make her forget about everything and become fully loyal to her.
-
-:: Just do it
-They manage to sneak into the lab thanks to guy's new powers.
-
-What to do now?
-
-[[(End)good sabotage idea]]
-
-[[(End)bad sabotage idea]]
-
-:: (End)good sabotage idea
-THey change the solution ever so slightly so it won't work anymore.
-
-Next day, they see the thing live on tv. It fails miserably. The whole lab is discredited and loose all its funding, and isn't able to continue working on that particular project.
-
-:: (End)bad sabotage idea
-They do something bad which triggers an alarm or whatever, and some guards come and arrest her (especially since they're ready to deal with guy because they knew he escaped).
-
-they get arrested and judged and everything, too bad.
-
-:: (End)Give everything to a charity and stop dealing about it
-Aya suggests it's better to give it to a charity because they'll be the ones who can do the best possible things with it.
-
-Fast forward a few years, they manage to find her back and give her a nobel prize against her will because it helped a lot.
-
-:: (End)keep experimenting
-Guy suggests that they keep watching him to see what happens, and then keep experimenting.
-
-They see that guy is getting stronger and stronger, and seeing his vitals, probably immortal, so they freak out. They try to make something to get him back to normal, but given that they have way less resources considering that they can't work at the lab anymore, it fails, and then start of a zombie apocalypse except that the zombies are immortal.
-
-:: It was an error of diagnostic
-Aya says that everyone thought he was dead, but it was just an error of diagnostic that she found out only now. The man still seems confused, but a bit relieved.
-
-He asks to call his family.
-
-[[Say yes]]
-
-[[Say no]]
-
-:: I don't know, I just woke up too
-Aya tries to explain that she's in the same case than him and she doesn't know what happened to them either. However, that is extremely suspicious, as she's fully clothed and very visibly a scientist, and he's naked and not a scientist.
-
-[[The man is freaking out]]
-
-:: You just had an exhausting operation, you need rest
-Guy is like, "ok, what do I do now"
-
-Aya tells him to wait for a while, while she goes and get some sedatives.
-
-When he's back to sleep, she has more time to think about the situation.
-
-The main problem is that there aren't many solutions to the problem, as what she told him is far from the truth and won't work with either his family nor anyone else.
-
-[[Change the story]]
-
-:: (End)Sell it to someone else
-Friend's idea is to sell it to another company so they can get a whole bunch of money and stop caring about anything. The other two are a bit reticent, but she lists companies with CEOs known for having decent morals. They end up selling it for way more money than they will ever need.
-
-However, things go downhill because of how the company uses the thing, and the earth is dying at a faster rate because of too much people. A space program is made, but only the ones who were revived can survive the trip, and the treatment having been made super expensive, only a select few can do it.
-
-The three of them end up having to put everything they own into being revived in order to have a chance to survive.
-
-:: Say yes
-Aya don't see why that would be a bad idea. She asks him for a number, which he gives. She calls the person (his mom), and tell her to come as soon as she can to the lab.
-
-(Meanwhile, clothes are given.)
-
-When mom gets there, there's a bunch of tears and happiness.
-
-Aya thinks it's a pretty good thing she has there.
-
-Some time pass. She managed to get the guy out of the lab without too much problems, and he's back with his family. However, at some point, he comes back to her at her place of work.
-
-"I think you lied to me. Now I have all these weird powers. What the fuck did you do."
-
-[[Finally tell him the truth]]
-
-:: Say no
-She tells him no, but she has to quickly find an excuse. She tries to explain that given the fact that they think he's dead, they should be more careful, also they never know if he's going to be fine or not since it's a very rare case.
-
-He seems to be more or less ok with that. He asks what he should do now.
-
-[[Stay here]]
-
-:: Change the story
-She waits for him to wake up again, and tells him that she told him that to not make him freak out too much about the situation, but it isn't the truth. He's a bit suspicious, but it works.
-
-[[It was an error of diagnostic]]
-[[I don't know, I just woke up too]]
-
-:: (End)Euthanize him
-Aya starts thinking about all the consequences of what she did
-
-:: Finally tell him the truth
-Aya finally explains to him what happened. 
-
-<<if $sociability > 0>>He gets angry and start yelling.
-[[(End)Try to explain things calmly]]
-[[(End)Slowly try to grab the gun in your desk]]<<endif>>
-<<if $sociability <= 0>>He understands, but say she should have told him.
-[[(End)Work together]]
-<<endif>>
-
-:: Stay here
-Aya explains to him that he has a weird condition that makes it too dangerous for himself to let him go out so he should stay hidden here. She takes him to her own lab and give him clothes.
-
-:: (End)Work together
-Guy understands all the potential of what Aya did. They decide to keep it a secret and work together to make a better world.
-
-:: (End)Try to explain things calmly
-Aya tries to explain calmly what this is all about. But guy only gets angrier and angrier, he doesn't like what he's become, being alive is not his place.
-
-He ends up throwing himself out of the window, and breaks his head a few floors below.
-
-Boss managed to cover Aya by confirming that it was a suicide and paying the right people for that, but Aya is fired. She doesn't do much after that, and burns all of her research out of guilt.
-
-:: (End)Slowly try to grab the gun in your desk
-Aya tries to grab the gun in her drawer to threaten him so he leaves her alone. However, he sees that, and take it from her.
-
-She tries her best to explain after that, but it's not enough and she gets shot.
+[[Beginning]]

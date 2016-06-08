@@ -7,6 +7,7 @@ using UnityTwine;
 
 public class PauseMenuScript : MonoBehaviour {
 	public GameObject pauseMenu;
+	public GameObject[] menus; //0 = main; 1 = save
 	public Story storyScript;
 	string[] vars;
 
@@ -18,15 +19,16 @@ public class PauseMenuScript : MonoBehaviour {
 			"sociability",
 			"suspicion"
 		};
+		int i = PlayerPrefs.GetInt("shouldLoadLevel");
+		if (i > 0) {
+			Load(i);
+		}
 		Resume();
 	}
 
-	public void Load(string passageName) {
-		if (passageName == "") {
-			passageName = PlayerPrefs.GetString ("SavedLevel");
-		}
-		Debug.Log("Load: " + passageName);
-		string paramsValue = PlayerPrefs.GetString("paramsValue");
+	void Load(int slot) {
+		string passageName = PlayerPrefs.GetString ("SavedLevel" + slot.ToString());
+		string paramsValue = PlayerPrefs.GetString("paramsValue" + slot.ToString());
 		string[] paramsValues = paramsValue.Split('|');
 		long i = 0;
 		foreach (string pValue in paramsValues) {
@@ -34,12 +36,14 @@ public class PauseMenuScript : MonoBehaviour {
 			storyScript[vars[i]] = var;
 			i++;
 		}
+		storyScript.AutoPlay = false;
 		storyScript.GoTo(passageName);
-		Resume();
+		GameObject.FindObjectOfType<TwineTextPlayer>().StartStory = false;
+		Debug.Log("Load: " + passageName);
 	}
 
 	void Update() {
-		if(Input.GetKeyDown(KeyCode.P)) {
+		if(Input.GetKeyDown(KeyCode.Escape)) {
 			if (pauseMenu.activeSelf == false) {
 				pauseMenu.SetActive(true);
 			} else {
@@ -55,19 +59,64 @@ public class PauseMenuScript : MonoBehaviour {
 		paramValue += storyScript[param].ToInt().ToString();
 	}
 
-	public void Save() {
-		Debug.Log("Save: " + storyScript.CurrentPassageName);
-		PlayerPrefs.SetString("SavedLevel", storyScript.CurrentPassageName);
+	//TODO save summary
+	public void Save(int slot) {
+		Debug.Log("Save: " + storyScript.CurrentPassageName + " in slot " + slot.ToString());
+		PlayerPrefs.SetString("SavedLevel" + slot.ToString(), storyScript.CurrentPassageName);
 		string paramsValue = "";
 		foreach (string var in vars) {
 			addParamToString(ref paramsValue, var);
 		}
-		Debug.Log(paramsValue);
-		PlayerPrefs.SetString("paramsValue", paramsValue);
+		/*string summary = storyScript["Summary"];
+		if (summary.Length > 0) {
+			PlayerPrefs.SetString("Summary" + slot.ToString(), summary);
+		}*/
+		PlayerPrefs.SetString("paramsValue" + slot.ToString(), paramsValue);
 	}
 
 	public void Resume() {
-		Debug.Log("Resume");
 		pauseMenu.SetActive(false);
+	}
+
+	public void GoToSaveMenu() {
+		menus[0].SetActive(false);
+		menus[1].SetActive(true);
+		GameObject[] slots = GameObject.FindGameObjectsWithTag("Slot");
+		foreach (GameObject s in slots) {
+			Text[] childTexts = s.GetComponentsInChildren<Text>();
+			Text summaryText = childTexts[0];
+			foreach (Text t in childTexts) {
+				if (t.name == "Summary") {
+					summaryText = t;
+				}
+			}
+			int i = 1;
+			while (i <= 3) {
+				string summ = PlayerPrefs.GetString("Summary" + i.ToString());
+				if (PlayerPrefs.GetString("SavedLevel" + i.ToString()).Length == 0) {
+					Debug.Log("Empty slot: " + i.ToString());
+					PlayerPrefs.SetString("SavedLevel" + i.ToString(), "Beginning");
+					PlayerPrefs.SetString("paramsValue" + i.ToString(), "");
+					PlayerPrefs.SetString("Summary" + i.ToString(), "Empty slot");
+				}
+				summaryText.text = summ;
+				i++;
+			}
+		}
+	}
+
+	public void Return() {
+		foreach (GameObject go in menus) {
+			go.SetActive(false);
+		}
+		menus[0].SetActive(true);
+	}
+
+	public void ReturnToMain() {
+		Application.LoadLevel("Menu");
+	}
+
+	public void Quit() {
+		Application.Quit();
 	}
 }

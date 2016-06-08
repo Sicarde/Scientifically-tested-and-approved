@@ -6,34 +6,45 @@ public class TextManager : MonoBehaviour {
 	public bool over = false;
 	bool dead = false;
 	int charPerLine = 76;
-	int nbLines = 3;
+	int nbLines = 4;
 	float waitBetweenCharPrint = 1.0f;
-	string textToPrint;
+	[HideInInspector]
+	public string textToPrint;
 	Text text;
 	string textToAddSlowly = "";
 	bool skipText = false;
 	bool start = true;
-	static int m_UniqueCounter = 0;
-	int m_MyID = m_UniqueCounter++;
+	ImagesManager _imageManager;
 
 	void Start () {
-		if (name == "" || name == "(empty line)") {
+		if (!nameIsOk(name)) {
+			dead = true;
 			DestroyObject(gameObject);
 			return;
 		}
 		text = gameObject.GetComponentInParent<Text>();
 		textToPrint = text.text.Replace('/', '\n');
-		CheckDuplicate();
+		while (textToPrint.EndsWith("\n")) {
+			textToPrint.Substring(0, textToPrint.Length - 2);
+		}
+		text.text = textToPrint;
+		_imageManager = GameObject.FindObjectOfType<ImagesManager>();
 	}
 
 	int SentenceLenght(string s, int currentSize) {
 		string size = s.Substring(0, s.IndexOf(".") + 1);
-		int count = (size.Length - size.Replace("\n", "").Length) / 2;
+		float count = (size.Length - size.Replace("\n", "").Length) / 1.25f;
+		if (s.IndexOf("\"") != -1 && s.IndexOf("\"") + currentSize + count * charPerLine < charPerLine * nbLines) {
+			return (s.IndexOf("\"") + 1);
+		}
 		if (s.IndexOf(".") != -1 && s.IndexOf(".") + currentSize + count * charPerLine < charPerLine * nbLines) {
 			return (s.IndexOf(".") + 1);
 		}
 		if (s.IndexOf(",") != -1 && s.IndexOf(",") + currentSize + count * charPerLine < charPerLine * nbLines) {
 			return (s.IndexOf(",") + 1);
+		}
+		if (s.IndexOf("?") != -1 && s.IndexOf("?") + currentSize + count * charPerLine < charPerLine * nbLines) {
+			return (s.IndexOf("?") + 1);
 		}
 		if (s.IndexOf("\n") != -1 && s.IndexOf("\n") + currentSize + count * charPerLine < charPerLine * nbLines) {
 			return (s.IndexOf("\n") + 1);
@@ -67,51 +78,68 @@ public class TextManager : MonoBehaviour {
 		}
 	}
 
-	void CheckDuplicate() {
-		TextManager[] tManager = GameObject.FindObjectsOfType<TextManager>();
-		foreach (TextManager tm in tManager) {
-			if (tm.m_MyID != m_MyID && !tm.dead && !dead) {
-				if (m_MyID < tm.m_MyID) {
-					textToPrint = textToPrint + "\n" + tm.textToPrint;
-					name = name + " " + tm.name;
-					tm.dead = true;
-					DestroyObject(tm.gameObject);
-				}
-				return;
-			}
-		}
+	bool nameIsOk(string name) {
+		return (name != "" && name != "(empty line)" && name != "/" && name != "//");
 	}
 
 	IEnumerator UpdateText() {
-		CheckDuplicate();
+		if (!_imageManager) {
+			_imageManager = GameObject.FindObjectOfType<ImagesManager>();
+		}
+		_imageManager.CheckTexts();
 		while (text.text.Length > 0 && text.text[0] == '\n') {
 			text.text = text.text.Substring(1, text.text.Length - 1);
 		}
 		while (textToAddSlowly.Length > 0) {
 			text.text += textToAddSlowly[0];
 			textToAddSlowly = textToAddSlowly.Substring(1, textToAddSlowly.Length - 1);
+			UpdateCharacterDisplayed();
 			yield return(new WaitForSeconds(waitBetweenCharPrint));
 		}
 	}
 
+	bool CheckEmpty(string s) {
+		if (s.Length == 0) {
+			return true;
+		}
+		s = s.Replace(" ", string.Empty);
+		s = s.Replace("\t", string.Empty);
+		s = s.Replace("\n", string.Empty);
+		if (s.Length > 0) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
 	void CheckOver() {
-		if (!dead && textToPrint.Length == 0 && textToAddSlowly.Length == 0 && !over) {
+		if (!dead && CheckEmpty(textToPrint) && CheckEmpty(textToAddSlowly) && !over) {
 			over = true;
+			Debug.Log("over");
 			LinkManager[] linksManagers = GameObject.FindObjectsOfType<LinkManager>();
 			int i = 0;
 			foreach (LinkManager lm in linksManagers) {
-				lm.EnableLink();
-				lm.transform.localPosition = new Vector3(lm.transform.localPosition.x,
-				                                         lm.transform.localPosition.y - 45 * i,
-				                                         lm.transform.localPosition.z);
+				if (!lm.HasBeenEnabled()) {
+					lm.EnableLink();
+					lm.transform.localPosition = new Vector3(lm.transform.localPosition.x,
+				    	                                     lm.transform.localPosition.y - 45 * i,
+				        	                                 lm.transform.localPosition.z);
+				}
 				i++;
 			}
 		}
 	}
 
-	// Update is called once per frame
+	void UpdateCharacterDisplayed() {
+		foreach (string name in _imageManager.characterNames) {
+			if (text.text.Contains(name + ":") || text.text.Contains(name + " :")) {
+				_imageManager.ChangeCharacterImage(name);
+			}
+		}
+	}
+
 	void Update () {
-		if (Input.anyKeyDown || start) {
+		if ((Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Escape)) || start) {
 			if (start) {
 				start = false;
 			}
@@ -130,6 +158,7 @@ public class TextManager : MonoBehaviour {
 				text.text += textToAddSlowly;
 				textToAddSlowly = "";
 				skipText = false;
+				UpdateCharacterDisplayed();
 				return ;
 			}
 		}
